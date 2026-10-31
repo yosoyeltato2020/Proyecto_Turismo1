@@ -4,217 +4,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover our three-day tourism experience in Spain.">
-    <title>Travel Experience | Discover Spain</title>
+
+    <title>THE PERFECT TRIP | Toledo & Puy du Fou España</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar">
-            <a href="#home" class="logo">TRAVEL <span>EXPERIENCE</span></a>
+    <header class="hero" id="home">
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#itinerary">Itinerary</a></li>
-                <li><a href="#accommodation">Accommodation</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <a href="#itinerary" class="nav-button">Explore the trip</a>
+        <nav class="top-nav">
+            <a href="index.html" class="logo">THE PERFECT TRIP</a>
+            <a href="#explore" class="nav-link">EXPLORE OUR TRIP ↓</a>
         </nav>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">A JOURNEY TO REMEMBER</p>
+
+            <h1>THE PERFECT TRIP</h1>
+
+            <h2>TOLEDO & PUY DU FOU ESPAÑA</h2>
+
+            <p class="hero-description">
+                Two days full of history, culture and entertainment.
+                Discover an unforgettable experience.
+            </p>
+
+            <!-- MAIN BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <a href="#explore" class="discover-button">
+                    DISCOVER THE JOURNEY
+                </a>
+
+                <a href="pages/registration.html" class="register-button">
+                    REGISTER NOW
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="https://images.zicasso.com/66dfe6a8182e73e25e66d4c6ce5bef00.jpg"
+                alt="Panoramic view of Toledo at sunset">
+        </div>
+
     </header>
+
 
     <main>
 
-        <!-- HERO -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <span class="eyebrow">AN UNFORGETTABLE EXPERIENCE</span>
+        <section class="explore-section" id="explore">
 
-                <h1>Discover the<br><span>Magic of Spain</span></h1>
+            <div class="section-heading">
+
+                <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+                <h2>EXPLORE OUR TRIP</h2>
 
                 <p>
-                    Three days, two nights and two amazing destinations.
-                    Experience history, culture and unforgettable moments.
+                    Discover every detail of your perfect journey.
+                    Select a card to explore each section.
                 </p>
 
-                <a href="#destinations" class="btn">DISCOVER OUR TRIP</a>
+            </div>
 
-                <div class="trip-info">
-                    <span>03 DAYS</span>
-                    <span>02 NIGHT</span>
-                    <span>02 DESTINATIONS</span>
+
+            <div class="cards-stage">
+
+                <div class="cards-fan">
+
+
+                    <!-- 01 PROFILE -->
+
+                    <a href="pages/profile.html"
+                       class="trip-card card-1"
+                       style="--angle: -24deg; --x: -480px; --y: 35px; --z: 0px;">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700"
+                            alt="People enjoying a trip together">
+
+                        <div class="card-info">
+                            <span>01</span>
+                            <h3>PROFILE</h3>
+                            <p>Who is this trip for?</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 02 DESTINATION -->
+
+                    <a href="pages/destination.html"
+                       class="trip-card card-2"
+                       style="--angle: -16deg; --x: -320px; --y: 5px; --z: 35px;">
+
+                        <img
+                            src="https://images.zicasso.com/66dfe6a8182e73e25e66d4c6ce5bef00.jpg"
+                            alt="Historic city of Toledo">
+
+                        <div class="card-info">
+                            <span>02</span>
+                            <h3>DESTINATION</h3>
+                            <p>Discover our destinations</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 03 TRANSPORT & HOTEL -->
+
+                    <a href="pages/transport-hotel.html"
+                       class="trip-card card-3"
+                       style="--angle: -8deg; --x: -160px; --y: -10px; --z: 65px;">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700"
+                            alt="Luxury hotel">
+
+                        <div class="card-info">
+                            <span>03</span>
+                            <h3>TRANSPORT & HOTEL</h3>
+                            <p>Travel in comfort</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 04 ITINERARY -->
+
+                    <a href="pages/itinerary.html"
+                       class="trip-card card-4"
+                       style="--angle: 0deg; --x: 0px; --y: -20px; --z: 90px;">
+
+                        <img
+                            src="https://cdn-imgix.headout.com/media/images/0c097f2086798f481d9d4d13898f64de-14522-PuyduFouEspan-aTickets--003.jpg?ar=16%3A10&auto=compress%2Cformat&crop=faces%2Ccenter&fit=crop&h=562.5&q=90&w=900"
+                            alt="Medieval village at Puy du Fou España">
+
+                        <div class="card-info">
+                            <span>04</span>
+                            <h3>ITINERARY</h3>
+                            <p>Two days to remember</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 05 BUDGET -->
+
+                    <a href="pages/budget.html"
+                       class="trip-card card-5"
+                       style="--angle: 8deg; --x: 160px; --y: -10px; --z: 65px;">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700"
+                            alt="Planning a travel budget">
+
+                        <div class="card-info">
+                            <span>05</span>
+                            <h3>BUDGET</h3>
+                            <p>Discover the costs</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 06 SERVICES -->
+
+                    <a href="pages/services.html"
+                       class="trip-card card-6"
+                       style="--angle: 16deg; --x: 320px; --y: 5px; --z: 35px;">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=700"
+                            alt="Tourist coach bus">
+
+                        <div class="card-info">
+                            <span>06</span>
+                            <h3>SERVICES</h3>
+                            <p>Everything included</p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- 07 RECOMMENDATIONS -->
+
+                    <a href="pages/recommendations.html"
+                       class="trip-card card-7"
+                       style="--angle: 24deg; --x: 480px; --y: 35px; --z: 0px;">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=700"
+                            alt="Beautiful travel landscape">
+
+                        <div class="card-info">
+                            <span>07</span>
+                            <h3>RECOMMENDATIONS</h3>
+                            <p>Useful tips for your trip</p>
+                        </div>
+
+                    </a>
+
+
                 </div>
-            </div>
-        </section>
 
-        <!-- INTRODUCTION -->
-        <section class="intro">
-            <span class="eyebrow">OUR TRAVEL EXPERIENCE</span>
-            <h2>A Journey Through History</h2>
-            <p>
-                Explore the spectacular world of Puy du Fou and discover
-                the historic beauty of Toledo. A special trip designed
-                to enjoy culture, entertainment and relaxation.
+            </div>
+
+
+            <p class="scroll-hint">
+                MOVE YOUR MOUSE OVER THE CARDS TO EXPLORE
             </p>
-        </section>
 
-        <!-- DESTINATIONS -->
-        <section id="destinations" class="destinations section">
-            <div class="section-heading">
-                <span class="eyebrow">EXPLORE SPAIN</span>
-                <h2>Our Destinations</h2>
-                <p>Two places. Two different experiences.</p>
-            </div>
-
-            <div class="destination-grid">
-
-                <!-- PUY DU FOU -->
-                <article class="destination-card">
-                    <div class="card-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000"
-                            alt="Historic castle and medieval architecture">
-                        <span class="day-label">SATURDAY</span>
-                    </div>
-
-                    <div class="card-content">
-                        <span class="card-category">HISTORY & ENTERTAINMENT</span>
-                        <h3>Puy du Fou España</h3>
-                        <p>
-                            Travel through the history of Spain with
-                            spectacular shows and unforgettable stories.
-                        </p>
-
-                        <button class="btn-outline"
-                            data-modal="puydufou">
-                            DISCOVER MORE →
-                        </button>
-                    </div>
-                </article>
-
-                <!-- TOLEDO -->
-                <article class="destination-card">
-                    <div class="card-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=1000"
-                            alt="Historic European city architecture">
-                        <span class="day-label">SUNDAY</span>
-                    </div>
-
-                    <div class="card-content">
-                        <span class="card-category">CULTURE & HERITAGE</span>
-                        <h3>Toledo</h3>
-                        <p>
-                            Discover a beautiful historic city with
-                            impressive monuments and medieval streets.
-                        </p>
-
-                        <button class="btn-outline"
-                            data-modal="toledo">
-                            DISCOVER MORE →
-                        </button>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ITINERARY -->
-        <section id="itinerary" class="itinerary section">
-            <div class="section-heading">
-                <span class="eyebrow">YOUR TRAVEL PLAN</span>
-                <h2>Our Itinerary</h2>
-                <p>Two days full of new experiences.</p>
-            </div>
-
-            <div class="timeline">
-
-                <article class="timeline-item">
-                    <div class="timeline-day">01</div>
-                    <div>
-                        <span class="eyebrow">SATURDAY</span>
-                        <h3>A Day at Puy du Fou</h3>
-                        <p>
-                            Travel to Puy du Fou España, enjoy the
-                            historical shows and discover the park.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="timeline-item">
-                    <div class="timeline-day">02</div>
-                    <div>
-                        <span class="eyebrow">SUNDAY</span>
-                        <h3>Discover Toledo</h3>
-                        <p>
-                            Explore the historic centre, admire its
-                            monuments and enjoy the atmosphere of Toledo.
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ACCOMMODATION -->
-        <section id="accommodation" class="accommodation section">
-            <div class="accommodation-image">
-                <img
-                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200"
-                    alt="Hotel swimming pool and accommodation">
-            </div>
-
-            <div class="accommodation-content">
-                <span class="eyebrow">YOUR COMFORT MATTERS</span>
-                <h2>Accommodation</h2>
-                <h3>Eurostars Palacio Buenavista</h3>
-                <p>
-                    Enjoy a comfortable stay in a five-star hotel
-                    in Toledo, with elegant facilities and excellent service.
-                </p>
-                <a href="https://www.eurostarshotels.com/"
-                   target="_blank" rel="noopener noreferrer"
-                   class="btn">HOTEL WEBSITE</a>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="contact section">
-            <span class="eyebrow">TRAVEL WITH US</span>
-            <h2>Discover. Explore. Enjoy.</h2>
-            <p>Thank you for discovering our tourism project.</p>
-            <a href="#home" class="btn">BACK TO TOP ↑</a>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+
     <footer>
-        <a href="#home" class="footer-logo">TRAVEL EXPERIENCE</a>
-        <p>© 2026 Travel Experience | Academic Tourism Project</p>
+
+        <p>THE PERFECT TRIP · TOLEDO & PUY DU FOU ESPAÑA</p>
+
+        <p>DISCOVER · EXPERIENCE · ENJOY</p>
+
     </footer>
-
-    <!-- MODAL -->
-    <div class="modal" id="destination-modal" aria-hidden="true">
-        <div class="modal-content" role="dialog"
-             aria-modal="true" aria-labelledby="modal-title">
-
-            <button class="modal-close" aria-label="Close">&times;</button>
-
-            <span class="eyebrow" id="modal-category"></span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-
-            <button class="btn" id="modal-ok">CLOSE</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 
 </body>
 </html>

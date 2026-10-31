@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration | THE PERFECT TRIP</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        /* REGISTRATION PAGE */
+
+        .registration-page {
+            min-height: 100vh;
+            background: var(--cream);
+            padding: 30px 20px 70px;
+        }
+
+        .registration-nav {
+            max-width: 1100px;
+            margin: 0 auto 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .registration-nav a {
+            color: var(--burgundy);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .registration-nav .logo {
+            color: var(--gold);
+            background: var(--burgundy);
+            padding: 12px 16px;
+        }
+
+        .registration-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .registration-heading .eyebrow {
+            color: #a4864e;
+        }
+
+        .registration-heading h1 {
+            font-size: clamp(30px, 5vw, 46px);
+            font-weight: normal;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .registration-heading p {
+            color: #746b66;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .registration-card {
+            max-width: 780px;
+            margin: 0 auto;
+            background: white;
+            padding: 45px;
+            border-top: 5px solid var(--gold);
+            box-shadow: 0 15px 45px rgba(53, 18, 29, 0.10);
+        }
+
+        .form-section-title {
+            color: var(--burgundy);
+            font-size: 17px;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e8dfd4;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            color: var(--burgundy);
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d9cec5;
+            background: #fcfaf7;
+            color: var(--burgundy);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(198, 161, 91, 0.15);
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .required-note {
+            color: #83766e;
+            font-size: 11px;
+            margin-top: -15px;
+            margin-bottom: 30px;
+        }
+
+        .conditions {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 25px 0;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #746b66;
+        }
+
+        .conditions input {
+            margin-top: 4px;
+            accent-color: var(--burgundy);
+        }
+
+        .conditions a {
+            color: var(--burgundy);
+        }
+
+        .submit-registration {
+            display: block;
+            width: 100%;
+            padding: 17px;
+            background: var(--burgundy);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-family: Georgia, serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-registration:hover {
+            background: var(--gold);
+            color: var(--burgundy);
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #edf2e9;
+            color: #354b32;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .registration-footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #83766e;
+            font-size: 11px;
+            letter-spacing: 2px;
+            line-height: 2;
+        }
+
+        @media (max-width: 600px) {
+
+            .registration-card {
+                padding: 25px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-nav {
+                gap: 15px;
+            }
+
+            .registration-nav a {
+                font-size: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main class="registration-page">
+
+        <!-- NAVIGATION -->
+
+        <nav class="registration-nav">
+
+            <a href="../index.html" class="logo">
+                THE PERFECT TRIP
+            </a>
+
+            <a href="../index.html">
+                ← BACK TO HOME
+            </a>
+
+        </nav>
+
+
+        <!-- PAGE HEADING -->
+
+        <header class="registration-heading">
+
+            <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+            <h1>REGISTRATION FORM</h1>
+
+            <p>
+                Join us for two unforgettable days in Toledo
+                and Puy du Fou España.
+            </p>
+
+        </header>
+
+
+        <!-- REGISTRATION FORM -->
+
+        <section class="registration-card">
+
+            <form id="registrationForm">
+
+                <!-- PERSONAL INFORMATION -->
+
+                <h2 class="form-section-title">
+                    PERSONAL INFORMATION
+                </h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="firstName">FIRST NAME *</label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="Your first name"
+                            autocomplete="given-name"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="lastName">LAST NAME *</label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            placeholder="Your last name"
+                            autocomplete="family-name"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="birthDate">DATE OF BIRTH *</label>
+
+                        <input
+                            type="date"
+                            id="birthDate"
+                            name="birthDate"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="nationality">NATIONALITY</label>
+
+                        <input
+                            type="text"
+                            id="nationality"
+                            name="nationality"
+                            placeholder="Your nationality">
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <h2 class="form-section-title">
+                    CONTACT INFORMATION
+                </h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS *</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="phone">PHONE NUMBER *</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+34 600 000 000"
+                            autocomplete="tel"
+                            required>
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="city">CITY OF RESIDENCE</label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Your city">
+                    </div>
+
+                </div>
+
+
+                <!-- TRIP INFORMATION -->
+
+                <h2 class="form-section-title">
+                    TRIP INFORMATION
+                </h2>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="participants">
+                            NUMBER OF PARTICIPANTS *
+                        </label>
+
+                        <select
+                            id="participants"
+                            name="participants"
+                            required>
+
+                            <option value="">Select number</option>
+                            <option value="1">1 participant</option>
+                            <option value="2">2 participants</option>
+                            <option value="3">3 participants</option>
+                            <option value="4">4 participants</option>
+                            <option value="5">5 participants</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="room">
+                            ROOM PREFERENCE
+                        </label>
+
+                        <select id="room" name="room">
+
+                            <option value="">Select preference</option>
+                            <option value="single">Single room</option>
+                            <option value="double">Double room</option>
+                            <option value="twin">Twin room</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="form-group full-width">
+                        <label for="requests">
+                            SPECIAL REQUESTS OR COMMENTS
+                        </label>
+
+                        <textarea
+                            id="requests"
+                            name="requests"
+                            placeholder="Write any additional information here..."></textarea>
+                    </div>
+
+                </div>
+
+
+                <!-- CONDITIONS -->
+
+                <p class="required-note">
+                    * Required fields
+                </p>
+
+                <label class="conditions">
+
+                    <input
+                        type="checkbox"
+                        id="conditions"
+                        name="conditions"
+                        required>
+
+                    <span>
+                        I have read and accept the terms and conditions
+                        of the trip registration.
+                    </span>
+
+                </label>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-registration">
+
+                    SUBMIT REGISTRATION
+
+                </button>
+
+
+                <div
+                    class="form-message"
+                    id="formMessage"
+                    role="status"
+                    aria-live="polite">
+
+                    Thank you! Your form has been completed successfully.
+                    This is a demonstration: your information has not been sent.
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="registration-footer">
+
+            <p>THE PERFECT TRIP · TOLEDO & PUY DU FOU ESPAÑA</p>
+
+            <p>DISCOVER · EXPERIENCE · ENJOY</p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- FORM VALIDATION -->
+
+    <script>
+
+        const registrationForm =
+            document.getElementById("registrationForm");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+        registrationForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            if (!registrationForm.checkValidity()) {
+                registrationForm.reportValidity();
+                return;
+            }
+
+            formMessage.style.display = "block";
+
+            registrationForm.reset();
+
+            formMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
