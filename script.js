@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // SELECT ALL TRIP CARDS
+
     const cards = document.querySelectorAll(".trip-card");
 
-    cards.forEach(card => {
 
-        // Efecto de perspectiva al mover el ratón
-        card.addEventListener("pointermove", event => {
+    // 3D MOVEMENT EFFECT
 
+    cards.forEach((card) => {
+
+        card.addEventListener("pointermove", (event) => {
+
+            // Only activate the effect with a mouse
             if (event.pointerType !== "mouse") return;
 
             const rect = card.getBoundingClientRect();
@@ -26,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        // Recuperar la posición original
+        // RESET CARD POSITION
+
         card.addEventListener("pointerleave", () => {
 
             card.style.setProperty("--rx", "0deg");
@@ -37,13 +43,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Control de imágenes que todavía no existen
+    // IMAGE ERROR CONTROL
+
     const images = document.querySelectorAll("img");
 
-    images.forEach(image => {
+    images.forEach((image) => {
 
         image.addEventListener("error", () => {
+
             image.classList.add("image-missing");
+
+        });
+
+    });
+
+
+    // SMOOTH NAVIGATION FOR INTERNAL LINKS
+
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+    internalLinks.forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const targetId = link.getAttribute("href");
+
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
         });
 
     });
