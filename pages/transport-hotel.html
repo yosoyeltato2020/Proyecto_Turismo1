@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transport & Accommodation | The Perfect Trip</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f0eb;
+            font-family: Georgia, serif;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 40px;
+            background: linear-gradient(135deg, #6b1d2a, #8b3a4a);
+            color: #f5e6d3;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #f0c987;
+        }
+
+        .title {
+            font-size: 26px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-right {
+            text-align: right;
+            font-style: italic;
+            font-size: 16px;
+            color: #f0c987;
+        }
+
+        .section-number {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-number span {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8b7d6b;
+        }
+
+        .card {
+            overflow: hidden;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+
+        .canva-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .footer {
+            height: 6px;
+            background: linear-gradient(
+                90deg,
+                #6b1d2a,
+                #f0c987,
+                #6b1d2a
+            );
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 22px 10px;
+        }
+
+        .navigation a {
+            color: #6b1d2a;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            color: #b18a4d;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 650px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 22px 15px;
+            }
+
+            .header-left {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .title {
+                font-size: 19px;
+            }
+
+            .header-right {
+                text-align: center;
+            }
+
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="section-number">
+            <span>Section 03</span>
+        </div>
+
+        <div class="card">
+
+            <header class="header">
+
+                <div class="header-left">
+
+                    <span class="number">03</span>
+
+                    <span class="title">
+                        Transport & Accommodation
+                    </span>
+
+                </div>
+
+                <div class="header-right">
+                    Puy du Fou<br>
+                    & Toledo
+                </div>
+
+            </header>
+
+            <!-- COMPLETE CANVA IMAGE -->
+
+            <img
+                src="../images/Transporte y alojamiento en Toledo.png"
+                alt="Transport and accommodation in Toledo"
+                class="canva-image"
+            >
+
+            <div class="footer"></div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <a href="../index.html">
+                ← BACK TO HOME
+            </a>
+
+            <a href="itinerary.html">
+                NEXT: ITINERARY →
+            </a>
+
+        </nav>
+
+    </main>
+
+</body>
+</html>

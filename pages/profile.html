@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Profile | The Perfect Trip</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        :root {
+            --burgundy: #4a1725;
+            --deep: #32101b;
+            --gold: #d2ad68;
+            --cream: #fbf3e5;
+            --ink: #321b20;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+        }
+
+        .profile-page {
+            max-width: 1440px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: var(--cream);
+        }
+
+        /* HEADER */
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 22px 5%;
+            color: #fff5e7;
+            background: var(--burgundy);
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .compass {
+            color: var(--gold);
+            font-size: 42px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            color: var(--gold);
+            font: 700 clamp(22px, 3vw, 38px) Georgia, serif;
+            letter-spacing: .04em;
+        }
+
+        .brand p {
+            margin: 7px 0 0;
+            font: 600 13px Arial, sans-serif;
+            letter-spacing: .12em;
+        }
+
+        .slide-number {
+            padding: 10px 18px;
+            border-radius: 0 0 0 22px;
+            color: var(--burgundy);
+            background: var(--cream);
+            font: 700 20px Georgia, serif;
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            display: grid;
+            grid-template-columns: .78fr 1.5fr;
+            min-height: 420px;
+            background: var(--deep);
+        }
+
+        .intro-copy {
+            padding: 45px;
+            color: white;
+            align-self: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            background: var(--gold);
+            color: var(--burgundy);
+            font: 700 28px Georgia, serif;
+        }
+
+        .intro-copy h2 {
+            margin: 0 0 22px;
+            font: italic 700 clamp(30px, 4vw, 48px)/1.08 Georgia, serif;
+        }
+
+        .gold-line {
+            width: 105px;
+            height: 4px;
+            margin-bottom: 24px;
+            background: var(--gold);
+        }
+
+        .intro-copy p {
+            max-width: 520px;
+            margin: 0;
+            color: #fff8ef;
+            font: 17px/1.55 Arial, sans-serif;
+        }
+
+        .intro-photo {
+            min-height: 420px;
+            background:
+                linear-gradient(90deg, rgba(50,16,27,.28), transparent 30%),
+                url("../images/profile-toledo.png")
+                center 43% / cover no-repeat;
+        }
+
+        /* THREE MOTIVATION CARDS */
+
+        .motivation {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 0 3%;
+        }
+
+        .motivation-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            min-height: 150px;
+            padding: 22px;
+            border: 2px solid var(--gold);
+            border-radius: 22px;
+            background: var(--cream);
+            box-shadow: 0 8px 20px rgba(45, 15, 25, .12);
+        }
+
+        .motivation-icon {
+            flex: 0 0 70px;
+            width: 70px;
+            height: 70px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--burgundy);
+            color: white;
+            font-size: 34px;
+        }
+
+        .motivation-card h3 {
+            margin: 0 0 8px;
+            color: var(--burgundy);
+            font: 800 18px Arial, sans-serif;
+        }
+
+        .motivation-card p {
+            margin: 0;
+            font: 15px/1.4 Arial, sans-serif;
+        }
+
+        /* CLIENT CHARACTERISTICS */
+
+        .facts {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr 1.3fr;
+            gap: 24px;
+            padding: 28px 5%;
+            margin-top: 22px;
+            background: #f5e7cf;
+        }
+
+        .fact {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-right: 18px;
+            border-right: 2px solid var(--gold);
+        }
+
+        .fact:last-child {
+            border-right: 0;
+        }
+
+        .fact-icon {
+            color: var(--burgundy);
+            font-size: 32px;
+        }
+
+        .fact strong {
+            display: block;
+            margin-bottom: 5px;
+            font: 800 14px Arial, sans-serif;
+        }
+
+        .fact span {
+            display: block;
+            color: var(--burgundy);
+            font: 700 18px/1.25 Arial, sans-serif;
+        }
+
+        /* FOOTER */
+
+        .closing {
+            padding: 20px;
+            text-align: center;
+            color: #fff7eb;
+            background: var(--burgundy);
+            font: italic 25px Georgia, serif;
+        }
+
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 22px 5%;
+            background: #fffaf2;
+        }
+
+        .page-navigation a {
+            color: var(--burgundy);
+            font: 700 14px Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        .page-navigation a:hover {
+            color: #986c2d;
+            text-decoration: underline;
+        }
+
+        /* TABLETS AND MOBILE */
+
+        @media (max-width: 850px) {
+
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-photo {
+                min-height: 330px;
+                grid-row: 1;
+            }
+
+            .motivation {
+                grid-template-columns: 1fr;
+                margin-top: 18px;
+            }
+
+            .motivation-card {
+                min-height: 120px;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .fact {
+                border-right: 0;
+                border-bottom: 1px solid var(--gold);
+                padding-bottom: 16px;
+            }
+
+            .fact:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .profile-top {
+                align-items: flex-start;
+            }
+
+            .compass {
+                font-size: 30px;
+            }
+
+            .brand p {
+                font-size: 10px;
+            }
+
+            .slide-number {
+                font-size: 15px;
+            }
+
+            .intro-photo {
+                min-height: 250px;
+            }
+
+            .motivation-card {
+                padding: 16px;
+                gap: 12px;
+            }
+
+            .motivation-icon {
+                flex-basis: 56px;
+                width: 56px;
+                height: 56px;
+                font-size: 27px;
+            }
+
+            .closing {
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<main class="profile-page">
+
+    <!-- HEADER -->
+
+    <header class="profile-top">
+
+        <div class="brand">
+
+            <div class="compass">✥</div>
+
+            <div>
+                <h1>THE PERFECT TRIP</h1>
+                <p>PUY DU FOU ESPAÑA &amp; TOLEDO</p>
+            </div>
+
+        </div>
+
+        <div class="slide-number">01 / 07</div>
+
+    </header>
+
+
+    <!-- CLIENT PROFILE -->
+
+    <section class="intro">
+
+        <div class="intro-copy">
+
+            <div class="eyebrow">
+                CLIENT PROFILE
+            </div>
+
+            <h2>
+                Who is this getaway<br>
+                designed for?
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+                Our trip is designed for a wide range of travellers,
+                from students and young adults to couples, families
+                and friends. They want to discover new places,
+                enjoy cultural experiences and have fun while
+                taking a break from their daily routine.
+            </p>
+
+        </div>
+
+        <div
+            class="intro-photo"
+            role="img"
+            aria-label="A group of friends visiting Toledo">
+        </div>
+
+    </section>
+
+
+    <!-- TRAVEL MOTIVATIONS -->
+
+    <section class="motivation">
+
+        <article class="motivation-card">
+
+            <div class="motivation-icon">🏛</div>
+
+            <div>
+                <h3>CULTURAL TOURISM</h3>
+
+                <p>
+                    Discover monuments, art, history
+                    and gastronomy.
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="motivation-card">
+
+            <div class="motivation-icon">⚖</div>
+
+            <div>
+                <h3>BALANCED EXPERIENCE</h3>
+
+                <p>
+                    Enjoy culture and entertainment
+                    at a relaxed pace.
+                </p>
+            </div>
+
+        </article>
+
+
+        <article class="motivation-card">
+
+            <div class="motivation-icon">❀</div>
+
+            <div>
+                <h3>RELAXATION</h3>
+
+                <p>
+                    Take time to unwind, enjoy free time
+                    and recharge.
+                </p>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- CLIENT CHARACTERISTICS -->
+
+    <section class="facts">
+
+        <div class="fact">
+
+            <div class="fact-icon">♧</div>
+
+            <div>
+                <strong>AGE RANGE</strong>
+                <span>Activities for all ages </span>
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">♙</div>
+
+            <div>
+                <strong>GROUP TYPE</strong>
+                <span>Students, couples, families and friends</span>
+            </div>
+
+        </div>
+
+
+        <div class="fact">
+
+            <div class="fact-icon">★</div>
+
+            <div>
+                <strong>INTERESTS</strong>
+                <span>Culture, history, heritage and leisure</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLOSING MESSAGE -->
+
+    <footer class="closing">
+
+        A perfect mix of culture, entertainment and relaxation
+
+    </footer>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="page-navigation">
+
+        <a href="../index.html">
+            ← BACK TO HOME
+        </a>
+
+        <a href="destination.html">
+            NEXT: DESTINATION →
+        </a>
+
+    </nav>
+
+</main>
+
+</body>
+</html>
