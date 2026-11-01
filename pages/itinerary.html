@@ -1,857 +1,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Discover our three-day journey through Toledo and Puy du Fou España.">
+
     <title>Our Journey | THE PERFECT TRIP</title>
 
-    <!-- Main website stylesheet -->
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="itinerary.css">
 
-    <!-- Leaflet map library -->
+    <!-- Leaflet map stylesheet -->
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     >
-
-    <style>
-        /* =====================================
-           ITINERARY PAGE - GENERAL DESIGN
-        ===================================== */
-
-        :root {
-            --burgundy: #35121d;
-            --burgundy-light: #512330;
-            --gold: #c6a15b;
-            --gold-light: #dfc58d;
-            --cream: #f8f5ef;
-            --sage: #a3b59b;
-            --text: #352c29;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        body {
-            margin: 0;
-            background: var(--cream);
-            color: var(--text);
-            font-family: Georgia, "Times New Roman", serif;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        /* =====================================
-           NAVIGATION
-        ===================================== */
-
-        .itinerary-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 17px 7%;
-            background: rgba(53, 18, 29, 0.97);
-            color: var(--cream);
-            backdrop-filter: blur(12px);
-        }
-
-        .nav-logo {
-            color: var(--gold-light);
-            font-size: 19px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            font-size: 12px;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-light);
-        }
-
-        /* =====================================
-           HERO
-        ===================================== */
-
-        .itinerary-hero {
-            min-height: 570px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            color: white;
-
-            background:
-                linear-gradient(
-                    rgba(35, 12, 20, 0.55),
-                    rgba(35, 12, 20, 0.78)
-                ),
-                url("https://images.zicasso.com/66dfe6a8182e73e25e66d4c6ce5bef00.jpg")
-                center/cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 850px;
-            animation: fadeUp 1.1s ease both;
-        }
-
-        .hero-eyebrow {
-            color: var(--gold-light);
-            font-size: 13px;
-            letter-spacing: 4px;
-            margin-bottom: 22px;
-        }
-
-        .itinerary-hero h1 {
-            font-size: clamp(48px, 8vw, 86px);
-            letter-spacing: 4px;
-            margin: 0;
-            font-weight: normal;
-        }
-
-        .hero-subtitle {
-            color: var(--gold-light);
-            font-size: clamp(21px, 3vw, 32px);
-            margin-top: 12px;
-            letter-spacing: 2px;
-        }
-
-        .hero-description {
-            max-width: 600px;
-            margin: 25px auto;
-            line-height: 1.8;
-            font-size: 17px;
-        }
-
-        .gold-line {
-            width: 85px;
-            height: 2px;
-            background: var(--gold);
-            margin: 25px auto;
-        }
-
-        .hero-button {
-            display: inline-block;
-            padding: 15px 30px;
-            border: 1px solid var(--gold);
-            color: white;
-            letter-spacing: 2px;
-            font-size: 12px;
-            transition: 0.3s;
-        }
-
-        .hero-button:hover {
-            background: var(--gold);
-            color: var(--burgundy);
-        }
-
-        /* =====================================
-           TRIP STATISTICS
-        ===================================== */
-
-        .trip-stats {
-            position: relative;
-            z-index: 2;
-            max-width: 950px;
-            margin: -45px auto 75px;
-            padding: 25px;
-            background: white;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.10);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            text-align: center;
-        }
-
-        .stat {
-            padding: 12px;
-            border-right: 1px solid #e8dfd2;
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat-number {
-            display: block;
-            font-size: 36px;
-            color: var(--burgundy);
-            margin-bottom: 7px;
-        }
-
-        .stat-label {
-            color: #8a786b;
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
-
-        /* =====================================
-           GENERAL SECTIONS
-        ===================================== */
-
-        .section-container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 0 25px;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-heading span {
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 3px;
-        }
-
-        .section-heading h2 {
-            color: var(--burgundy);
-            font-size: clamp(32px, 5vw, 46px);
-            font-weight: normal;
-            margin: 12px 0;
-        }
-
-        .section-heading p {
-            color: #786e67;
-            line-height: 1.7;
-        }
-
-        /* =====================================
-           DAY NAVIGATION
-        ===================================== */
-
-        .day-navigation {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 0 auto 85px;
-        }
-
-        .day-navigation a {
-            padding: 14px 27px;
-            border: 1px solid var(--gold);
-            color: var(--burgundy);
-            background: white;
-            font-size: 12px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .day-navigation a:hover {
-            background: var(--burgundy);
-            color: white;
-            transform: translateY(-4px);
-        }
-
-        /* =====================================
-           DAY SECTIONS
-        ===================================== */
-
-        .day-section {
-            margin-bottom: 105px;
-            scroll-margin-top: 100px;
-        }
-
-        .day-header {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .day-number {
-            min-width: 75px;
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--burgundy);
-            color: var(--gold-light);
-            font-size: 30px;
-        }
-
-        .day-title span {
-            color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 3px;
-        }
-
-        .day-title h2 {
-            color: var(--burgundy);
-            font-size: clamp(25px, 4vw, 36px);
-            font-weight: normal;
-            margin: 7px 0;
-        }
-
-        .day-title p {
-            color: #82776f;
-            margin: 0;
-        }
-
-        .day-image {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* =====================================
-           TIMELINE
-        ===================================== */
-
-        .timeline {
-            position: relative;
-            margin: 35px 0 0 12px;
-            padding-left: 35px;
-            border-left: 2px solid #e4d6bd;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 0 0 30px 15px;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -43px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--gold);
-            border: 3px solid var(--cream);
-            box-shadow: 0 0 0 1px var(--gold);
-        }
-
-        .timeline-time {
-            display: inline-block;
-            color: var(--burgundy);
-            font-weight: bold;
-            font-size: 17px;
-            margin-bottom: 7px;
-        }
-
-        .timeline-item h3 {
-            color: var(--burgundy);
-            font-size: 19px;
-            margin: 0 0 7px;
-            font-weight: normal;
-        }
-
-        .timeline-item p {
-            color: #786e67;
-            font-size: 14px;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* =====================================
-           DAY PHOTO GALLERY
-        ===================================== */
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 35px;
-        }
-
-        .gallery-image {
-            height: 190px;
-            width: 100%;
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.4s, filter 0.4s;
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.035);
-            filter: brightness(0.85);
-        }
-
-        /* =====================================
-           TOLEDO MAP
-        ===================================== */
-
-        .map-section {
-            background: #f0ebe2;
-            padding: 85px 0;
-            margin: 30px 0 90px;
-        }
-
-        .map-wrapper {
-            background: white;
-            padding: 15px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-        }
-
-        #toledo-map {
-            height: 480px;
-            width: 100%;
-            z-index: 1;
-        }
-
-        .map-note {
-            color: #82776f;
-            font-size: 12px;
-            line-height: 1.6;
-            padding: 15px 5px 3px;
-        }
-
-        .map-legend {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 22px 0 0;
-            font-size: 12px;
-            color: #786e67;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .legend-dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: var(--burgundy);
-        }
-
-        /* =====================================
-           INTERACTIVE MAP POPUPS
-        ===================================== */
-
-        .leaflet-popup-content-wrapper {
-            border-radius: 3px;
-            font-family: Georgia, serif;
-        }
-
-        .map-popup h3 {
-            color: var(--burgundy);
-            margin: 0 0 7px;
-            font-size: 16px;
-        }
-
-        .map-popup p {
-            margin: 0;
-            color: #6d625c;
-            line-height: 1.5;
-            font-size: 12px;
-        }
-
-        /* =====================================
-           RESTAURANT HIGHLIGHT
-        ===================================== */
-
-        .restaurant-card {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-        }
-
-        .restaurant-card img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-        }
-
-        .restaurant-info {
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .restaurant-info span {
-            color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
-
-        .restaurant-info h3 {
-            color: var(--burgundy);
-            font-size: 27px;
-            font-weight: normal;
-            margin: 12px 0;
-        }
-
-        .restaurant-info p {
-            color: #786e67;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        /* =====================================
-           TRIP ACTIONS
-        ===================================== */
-
-        .trip-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 50px 0 90px;
-        }
-
-        .action-button {
-            padding: 15px 25px;
-            border: 1px solid var(--gold);
-            background: var(--burgundy);
-            color: white;
-            cursor: pointer;
-            letter-spacing: 1px;
-            font-size: 11px;
-            transition: 0.3s;
-        }
-
-        .action-button:hover {
-            background: var(--gold);
-            color: var(--burgundy);
-        }
-
-        .action-button.secondary {
-            background: transparent;
-            color: var(--burgundy);
-        }
-
-        .action-button.secondary:hover {
-            background: var(--burgundy);
-            color: white;
-        }
-
-        /* =====================================
-           LIGHTBOX
-        ===================================== */
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            inset: 0;
-            background: rgba(20, 10, 13, 0.94);
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 85vh;
-            object-fit: contain;
-            border: 3px solid var(--gold);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 38px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* =====================================
-           FOOTER
-        ===================================== */
-
-        .itinerary-footer {
-            background: var(--burgundy);
-            color: white;
-            padding: 75px 20px;
-            text-align: center;
-        }
-
-        .itinerary-footer h2 {
-            color: var(--gold-light);
-            font-size: 35px;
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
-
-        .itinerary-footer p {
-            color: #eee1d5;
-            line-height: 1.8;
-        }
-
-        .footer-links {
-            margin-top: 30px;
-        }
-
-        .footer-links a {
-            display: inline-block;
-            margin: 8px;
-            padding: 12px 22px;
-            border: 1px solid var(--gold);
-            color: white;
-            font-size: 11px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            background: var(--gold);
-            color: var(--burgundy);
-        }
-
-        /* =====================================
-           ANIMATIONS
-        ===================================== */
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* =====================================
-           RESPONSIVE DESIGN
-        ===================================== */
-
-        @media (max-width: 800px) {
-
-            .itinerary-nav {
-                padding: 15px 5%;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 13px;
-                flex-wrap: wrap;
-            }
-
-            .nav-links a {
-                font-size: 10px;
-            }
-
-            .trip-stats {
-                margin: -30px 15px 65px;
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat:nth-child(2) {
-                border-right: none;
-            }
-
-            .stat:nth-child(1),
-            .stat:nth-child(2) {
-                border-bottom: 1px solid #e8dfd2;
-            }
-
-            .photo-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .restaurant-card {
-                grid-template-columns: 1fr;
-            }
-
-            .restaurant-card img {
-                height: 230px;
-            }
-
-            #toledo-map {
-                height: 380px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .nav-links {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .itinerary-hero {
-                min-height: 480px;
-            }
-
-            .itinerary-hero h1 {
-                letter-spacing: 1px;
-            }
-
-            .hero-description {
-                font-size: 14px;
-            }
-
-            .day-header {
-                gap: 15px;
-            }
-
-            .day-number {
-                min-width: 58px;
-                height: 58px;
-                font-size: 23px;
-            }
-
-            .day-image {
-                height: 230px;
-            }
-
-            .photo-gallery {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gallery-image {
-                height: 135px;
-            }
-
-            #toledo-map {
-                height: 330px;
-            }
-
-            .restaurant-info {
-                padding: 25px;
-            }
-        }
-
-        /* =====================================
-           PRINT / SAVE AS PDF
-        ===================================== */
-
-        @media print {
-
-            .itinerary-nav,
-            .day-navigation,
-            .trip-actions,
-            .lightbox,
-            .map-section,
-            .footer-links {
-                display: none !important;
-            }
-
-            body {
-                background: white;
-            }
-
-            .itinerary-hero {
-                min-height: auto;
-                padding: 40px;
-                background: var(--burgundy) !important;
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-
-            .trip-stats {
-                margin: 20px auto;
-                box-shadow: none;
-            }
-
-            .day-section {
-                margin-bottom: 45px;
-                break-inside: avoid;
-            }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
-
-            .photo-gallery {
-                display: none;
-            }
-
-            .restaurant-card {
-                break-inside: avoid;
-            }
-
-            .itinerary-footer {
-                padding: 25px;
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-    </style>
 </head>
 
 <body>
 
-    <!-- =====================================
-         NAVIGATION
-    ====================================== -->
-
+    <!-- NAVIGATION -->
     <nav class="itinerary-nav">
 
         <a href="../index.html" class="nav-logo">
             THE PERFECT TRIP
         </a>
 
-        <div class="nav-links">
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <div class="nav-links" id="nav-links">
             <a href="../index.html">HOME</a>
             <a href="#friday">FRIDAY</a>
             <a href="#saturday">SATURDAY</a>
@@ -861,10 +49,7 @@
     </nav>
 
 
-    <!-- =====================================
-         HERO
-    ====================================== -->
-
+    <!-- HERO -->
     <header class="itinerary-hero">
 
         <div class="hero-content">
@@ -897,10 +82,7 @@
     </header>
 
 
-    <!-- =====================================
-         TRIP STATISTICS
-    ====================================== -->
-
+    <!-- TRIP STATISTICS -->
     <section class="trip-stats reveal">
 
         <div class="stat">
@@ -926,12 +108,9 @@
     </section>
 
 
-    <!-- =====================================
-         DAY NAVIGATION
-    ====================================== -->
-
     <main class="section-container">
 
+        <!-- INTRODUCTION -->
         <section class="section-heading reveal">
 
             <span>YOUR TRAVEL PLAN</span>
@@ -946,20 +125,27 @@
         </section>
 
 
+        <!-- DAY NAVIGATION -->
         <nav class="day-navigation reveal">
 
-            <a href="#friday">FRIDAY 27 · ARRIVAL</a>
+            <a href="#friday">
+                FRIDAY 27 · ARRIVAL
+            </a>
 
-            <a href="#saturday">SATURDAY 28 · PUY DU FOU</a>
+            <a href="#saturday">
+                SATURDAY 28 · PUY DU FOU
+            </a>
 
-            <a href="#sunday">SUNDAY 29 · TOLEDO</a>
+            <a href="#sunday">
+                SUNDAY 29 · TOLEDO
+            </a>
 
         </nav>
 
 
-        <!-- =====================================
-             FRIDAY
-        ====================================== -->
+        <!-- =================================
+             DAY 1 - FRIDAY
+        ================================== -->
 
         <section class="day-section reveal" id="friday">
 
@@ -981,12 +167,28 @@
 
             </div>
 
-            <img
-                class="day-image"
-                src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400"
-                alt="Elegant hotel"
-            >
 
+            <!-- HOTEL PHOTOGRAPHS -->
+            <div class="hotel-gallery">
+
+                <!-- HOTEL INTERIOR -->
+                <img
+                    src="https://media.booking-channel.com/api/hotels/829/images/491.jpeg"
+                    alt="Eurostars Palacio Buenavista hotel interior"
+                    loading="lazy"
+                >
+
+                <!-- HOTEL EXTERIOR -->
+                <img
+                    src="https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-bb-19-bb19989d-db57-47e0-9995-82176ea4a940-6526-quixote-palacio-de-buenavista-c7eafe61c7bc4576bfb4d6b9ec24cba7.jpeg"
+                    alt="Exterior entrance of Eurostars Palacio Buenavista"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- FRIDAY TIMELINE -->
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -1002,6 +204,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">19:00</span>
@@ -1016,6 +219,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">19:00–20:00</span>
@@ -1027,6 +231,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1046,9 +251,9 @@
         </section>
 
 
-        <!-- =====================================
-             SATURDAY
-        ====================================== -->
+        <!-- =================================
+             DAY 2 - SATURDAY
+        ================================== -->
 
         <section class="day-section reveal" id="saturday">
 
@@ -1070,12 +275,17 @@
 
             </div>
 
+
+            <!-- MAIN PARK IMAGE -->
             <img
                 class="day-image"
-                src="https://cdn-imgix.headout.com/media/images/0c097f2086798f481d9d4d13898f64de-14522-PuyduFouEspan-aTickets--003.jpg?ar=16%3A10&auto=compress%2Cformat&crop=faces%2Ccenter&fit=crop&h=562.5&q=90&w=1400"
-                alt="Puy du Fou España historical show"
+                src="https://puydufouespana.com/espana/files/s3fs-public/homepage/main-image/home-1_3.jpg?VersionId=LVdU1ZFpu9lA4OhqB1JN_gH6csmCyRtX"
+                alt="Puy du Fou España"
+                loading="lazy"
             >
 
+
+            <!-- SATURDAY TIMELINE -->
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -1090,6 +300,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">09:00</span>
@@ -1101,6 +312,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1115,6 +327,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">09:30</span>
@@ -1127,6 +340,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1142,6 +356,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">20:00–21:00</span>
@@ -1153,6 +368,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1166,6 +382,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1183,24 +400,28 @@
             </div>
 
 
+            <!-- PARK PHOTO GALLERY -->
             <div class="photo-gallery">
 
                 <img
                     class="gallery-image"
-                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700"
-                    alt="Beautiful landscape"
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Puy_du_Fou_Espa%C3%B1a.jpg"
+                    alt="Puy du Fou España entrance"
+                    loading="lazy"
                 >
 
                 <img
                     class="gallery-image"
-                    src="https://cdn-imgix.headout.com/media/images/0c097f2086798f481d9d4d13898f64de-14522-PuyduFouEspan-aTickets--003.jpg?ar=16%3A10&auto=compress%2Cformat&fit=crop&h=562.5&q=90&w=700"
-                    alt="Puy du Fou España"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/38/Puy_du_Fou%2C_Toledo_2.jpg"
+                    alt="Puy du Fou España attraction"
+                    loading="lazy"
                 >
 
                 <img
                     class="gallery-image"
-                    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700"
-                    alt="Night sky"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Puy_du_Fou%2C_Toledo_5.jpg"
+                    alt="Puy du Fou España evening show"
+                    loading="lazy"
                 >
 
             </div>
@@ -1210,9 +431,9 @@
     </main>
 
 
-    <!-- =====================================
-         SUNDAY - TOLEDO
-    ====================================== -->
+    <!-- =================================
+         DAY 3 - SUNDAY / TOLEDO
+    ================================== -->
 
     <section class="map-section" id="sunday">
 
@@ -1233,16 +454,22 @@
 
 
             <!-- INTERACTIVE MAP -->
-
             <div class="map-wrapper reveal">
 
                 <div id="toledo-map"></div>
 
                 <p class="map-note">
-                    The markers show the planned visit sequence.
-                    The connecting line is a visual guide,
-                    not a precise pedestrian navigation route.
-                    Actual walking paths may vary.
+                    Explore our planned route through Toledo.
+                    Select each marker to discover more about
+                    the places included in our visit.
+                </p>
+
+                <p
+                    class="route-status"
+                    id="route-status"
+                    aria-live="polite"
+                >
+                    Loading pedestrian route...
                 </p>
 
                 <div class="map-legend">
@@ -1253,8 +480,10 @@
                     </div>
 
                     <div class="legend-item">
-                        <span class="legend-dot"
-                            style="background:#a3b59b"></span>
+                        <span
+                            class="legend-dot"
+                            style="background:#a3b59b"
+                        ></span>
                         <span>Restaurant</span>
                     </div>
 
@@ -1264,7 +493,6 @@
 
 
             <!-- SUNDAY TIMELINE -->
-
             <div class="timeline reveal">
 
                 <div class="timeline-item">
@@ -1281,6 +509,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">10:30</span>
@@ -1293,6 +522,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1307,6 +537,7 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">11:15</span>
@@ -1320,48 +551,10 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
                     <span class="timeline-time">11:45</span>
-
-                    <h3>Historic streets of Toledo</h3>
-
-                    <p>
-                        Enjoy a walk through the old town
-                        towards the historic monuments.
-                    </p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <span class="timeline-time">12:15</span>
-
-                    <h3>Sephardic Museum</h3>
-
-                    <p>
-                        Visit to the Synagogue of El Tránsito
-                        and discover Toledo's Jewish heritage.
-                    </p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <span class="timeline-time">13:15</span>
-
-                    <h3>El Greco Museum</h3>
-
-                    <p>
-                        Discover the life and work
-                        of the famous painter.
-                    </p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <span class="timeline-time">14:00</span>
 
                     <h3>Toledo Cathedral</h3>
 
@@ -1372,9 +565,38 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
-                    <span class="timeline-time">15:00</span>
+                    <span class="timeline-time">12:30</span>
+
+                    <h3>El Greco Museum</h3>
+
+                    <p>
+                        Discover the life and work
+                        associated with the famous painter.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span class="timeline-time">13:15</span>
+
+                    <h3>Synagogue of El Tránsito · Sephardic Museum</h3>
+
+                    <p>
+                        Discover Toledo's Jewish heritage
+                        and the history of the Sephardic community.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span class="timeline-time">14:30</span>
 
                     <h3>Lunch at SKALA Restaurant</h3>
 
@@ -1385,9 +607,10 @@
 
                 </div>
 
+
                 <div class="timeline-item">
 
-                    <span class="timeline-time">16:30</span>
+                    <span class="timeline-time">16:00</span>
 
                     <h3>Free time</h3>
 
@@ -1397,6 +620,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1410,6 +634,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="timeline-item">
 
@@ -1426,18 +651,18 @@
             </div>
 
 
-            <!-- RESTAURANT CARD -->
-
+            <!-- RESTAURANT HIGHLIGHT -->
             <div class="restaurant-card reveal">
 
                 <img
-                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900"
-                    alt="Restaurant dining room"
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/60/fa/bf/skala-pozo-amargo.jpg?h=500&s=1&w=900"
+                    alt="SKALA Restaurant in Toledo"
+                    loading="lazy"
                 >
 
                 <div class="restaurant-info">
 
-                    <span>15:00 · LUNCH BREAK</span>
+                    <span>14:30 · LUNCH BREAK</span>
 
                     <h3>SKALA Restaurant</h3>
 
@@ -1452,6 +677,14 @@
                         Toledo, Spain.
                     </p>
 
+                    <a
+                        href="https://www.tripadvisor.co/Restaurant_Review-g187489-d26587282-Reviews-or15-Restaurante_Skala-Toledo_Province_of_Toledo_Castile_La_Mancha.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        DISCOVER THE RESTAURANT
+                    </a>
+
                 </div>
 
             </div>
@@ -1461,10 +694,7 @@
     </section>
 
 
-    <!-- =====================================
-         PRINT AND INTERACTION BUTTONS
-    ====================================== -->
-
+    <!-- PRINT AND INTERACTION BUTTONS -->
     <div class="section-container">
 
         <div class="trip-actions reveal">
@@ -1490,11 +720,15 @@
     </div>
 
 
-    <!-- =====================================
-         PHOTO LIGHTBOX
-    ====================================== -->
-
-    <div class="lightbox" id="lightbox">
+    <!-- PHOTO LIGHTBOX -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-label="Enlarged photograph"
+    >
 
         <button
             class="lightbox-close"
@@ -1505,15 +739,18 @@
             &times;
         </button>
 
-        <img id="lightbox-image" src="" alt="Enlarged trip photograph">
+        <img
+            id="lightbox-image"
+            src=""
+            alt="Enlarged trip photograph"
+        >
+
+        <p id="lightbox-caption" class="lightbox-caption"></p>
 
     </div>
 
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
+    <!-- FOOTER -->
     <footer class="itinerary-footer">
 
         <h2>THE END OF OUR JOURNEY</h2>
@@ -1544,397 +781,11 @@
     </footer>
 
 
-    <!-- =====================================
-         JAVASCRIPT LIBRARIES
-    ====================================== -->
-
+    <!-- JAVASCRIPT LIBRARIES -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-
-    <!-- =====================================
-         JAVASCRIPT INTERACTIONS
-    ====================================== -->
-
-    <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-            /* =================================
-               1. SMOOTH SCROLL
-            ================================= */
-
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-                link.addEventListener("click", event => {
-
-                    const target = document.querySelector(
-                        link.getAttribute("href")
-                    );
-
-                    if (!target) return;
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-                });
-
-            });
-
-
-            /* =================================
-               2. ANIMATED STATISTICS
-            ================================= */
-
-            const counters = document.querySelectorAll(".stat-number");
-
-            const animateCounter = element => {
-
-                const target = Number(element.dataset.target);
-
-                const duration = 1200;
-
-                const startTime = performance.now();
-
-                function updateCounter(currentTime) {
-
-                    const progress = Math.min(
-                        (currentTime - startTime) / duration,
-                        1
-                    );
-
-                    const value = Math.floor(target * progress);
-
-                    element.textContent = value;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        element.textContent = target;
-                    }
-
-                }
-
-                requestAnimationFrame(updateCounter);
-
-            };
-
-            const counterObserver = new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        animateCounter(entry.target);
-
-                        counterObserver.unobserve(entry.target);
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.6
-            });
-
-            counters.forEach(counter => {
-                counterObserver.observe(counter);
-            });
-
-
-            /* =================================
-               3. SCROLL REVEAL ANIMATIONS
-            ================================= */
-
-            const revealElements = document.querySelectorAll(".reveal");
-
-            const revealObserver = new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        revealObserver.unobserve(entry.target);
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.12
-            });
-
-            revealElements.forEach(element => {
-                revealObserver.observe(element);
-            });
-
-
-            /* =================================
-               4. INTERACTIVE TOLEDO MAP
-            ================================= */
-
-            const mapElement = document.getElementById("toledo-map");
-
-            if (mapElement && typeof L !== "undefined") {
-
-                const map = L.map("toledo-map").setView(
-                    [39.8580, -4.0270],
-                    15
-                );
-
-                L.tileLayer(
-                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    {
-                        attribution:
-                            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                        maxZoom: 19
-                    }
-                ).addTo(map);
-
-
-                const locations = [
-
-                    {
-                        number: 1,
-                        name: "Plaza de Zocodover",
-                        description:
-                            "Meeting point and beginning of the walking tour.",
-                        position: [39.8628, -4.0273]
-                    },
-
-                    {
-                        number: 2,
-                        name: "Alcázar of Toledo",
-                        description:
-                            "Exterior visit and historical explanation.",
-                        position: [39.8585, -4.0227]
-                    },
-
-                    {
-                        number: 3,
-                        name: "Sephardic Museum",
-                        description:
-                            "Visit to the Synagogue of El Tránsito.",
-                        position: [39.8565, -4.0313]
-                    },
-
-                    {
-                        number: 4,
-                        name: "El Greco Museum",
-                        description:
-                            "Discover the life and work of the painter.",
-                        position: [39.8561, -4.0306]
-                    },
-
-                    {
-                        number: 5,
-                        name: "Toledo Cathedral",
-                        description:
-                            "Visit to one of Spain's most important Gothic monuments.",
-                        position: [39.8579, -4.0245]
-                    },
-
-                    {
-                        number: 6,
-                        name: "SKALA Restaurant",
-                        description:
-                            "Lunch at Calle Pozo Amargo, No. 2, Toledo.",
-                        position: [39.8568, -4.0240],
-                        restaurant: true
-                    }
-
-                ];
-
-
-                const routePoints = [];
-
-                locations.forEach(location => {
-
-                    const markerColor = location.restaurant
-                        ? "#a3b59b"
-                        : "#512330";
-
-                    const markerIcon = L.divIcon({
-
-                        className: "custom-map-marker",
-
-                        html: `
-                            <div style="
-                                background:${markerColor};
-                                color:white;
-                                width:30px;
-                                height:30px;
-                                border:2px solid white;
-                                border-radius:50%;
-                                display:flex;
-                                justify-content:center;
-                                align-items:center;
-                                font-size:13px;
-                                font-weight:bold;
-                                box-shadow:0 2px 7px rgba(0,0,0,0.35);
-                            ">
-                                ${location.number}
-                            </div>
-                        `,
-
-                        iconSize: [30, 30],
-                        iconAnchor: [15, 15]
-
-                    });
-
-
-                    const popupContent = `
-                        <div class="map-popup">
-                            <h3>${location.number}. ${location.name}</h3>
-                            <p>${location.description}</p>
-                        </div>
-                    `;
-
-
-                    L.marker(location.position, {
-                        icon: markerIcon
-                    })
-                    .addTo(map)
-                    .bindPopup(popupContent);
-
-                    routePoints.push(location.position);
-
-                });
-
-
-                /* Schematic connection between stops.
-                   This is not turn-by-turn walking navigation. */
-
-                L.polyline(routePoints, {
-
-                    color: "#c6a15b",
-                    weight: 4,
-                    opacity: 0.85,
-                    dashArray: "8, 10"
-
-                }).addTo(map);
-
-
-                const bounds = L.latLngBounds(routePoints);
-
-                map.fitBounds(bounds, {
-                    padding: [35, 35]
-                });
-
-
-                setTimeout(() => {
-                    map.invalidateSize();
-                }, 300);
-
-            }
-
-
-            /* =================================
-               5. PHOTO LIGHTBOX
-            ================================= */
-
-            const galleryImages = document.querySelectorAll(".gallery-image");
-
-            const lightbox = document.getElementById("lightbox");
-
-            const lightboxImage = document.getElementById("lightbox-image");
-
-            const closeLightbox = document.getElementById("close-lightbox");
-
-
-            galleryImages.forEach(image => {
-
-                image.addEventListener("click", () => {
-
-                    lightboxImage.src = image.src;
-
-                    lightboxImage.alt = image.alt;
-
-                    lightbox.classList.add("active");
-
-                });
-
-            });
-
-
-            function hideLightbox() {
-
-                lightbox.classList.remove("active");
-
-                lightboxImage.src = "";
-
-            }
-
-            closeLightbox.addEventListener("click", hideLightbox);
-
-            lightbox.addEventListener("click", event => {
-
-                if (event.target === lightbox) {
-                    hideLightbox();
-                }
-
-            });
-
-            document.addEventListener("keydown", event => {
-
-                if (event.key === "Escape") {
-                    hideLightbox();
-                }
-
-            });
-
-
-            /* =================================
-               6. PRINT ITINERARY
-            ================================= */
-
-            document.getElementById("print-button")
-                .addEventListener("click", () => {
-
-                    window.print();
-
-                });
-
-
-            /* =================================
-               7. BACK TO TOP
-            ================================= */
-
-            document.getElementById("top-button")
-                .addEventListener("click", () => {
-
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                    });
-
-                });
-
-
-            /* =================================
-               8. BROKEN IMAGE HANDLING
-            ================================= */
-
-            document.querySelectorAll("img").forEach(image => {
-
-                image.addEventListener("error", () => {
-
-                    image.style.background = "#e8dfd2";
-
-                    image.alt = "Image temporarily unavailable";
-
-                });
-
-            });
-
-        });
-
-    </script>
+    <!-- ITINERARY JAVASCRIPT -->
+    <script src="itinerary.js"></script>
 
 </body>
 </html>
