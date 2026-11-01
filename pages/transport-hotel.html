@@ -1,213 +1,533 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Transport & Accommodation | The Perfect Trip</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            background: #f5f0eb;
-            font-family: Georgia, serif;
-            padding: 25px;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 24px 40px;
-            background: linear-gradient(135deg, #6b1d2a, #8b3a4a);
-            color: #f5e6d3;
-            border-radius: 16px 16px 0 0;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #f0c987;
-        }
-
-        .title {
-            font-size: 26px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .header-right {
-            text-align: right;
-            font-style: italic;
-            font-size: 16px;
-            color: #f0c987;
-        }
-
-        .section-number {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .section-number span {
-            font-size: 14px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #8b7d6b;
-        }
-
-        .card {
-            overflow: hidden;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-        }
-
-        .canva-image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .footer {
-            height: 6px;
-            background: linear-gradient(
-                90deg,
-                #6b1d2a,
-                #f0c987,
-                #6b1d2a
-            );
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 22px 10px;
-        }
-
-        .navigation a {
-            color: #6b1d2a;
-            font-size: 14px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .navigation a:hover {
-            color: #b18a4d;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 650px) {
-
-            body {
-                padding: 12px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-                padding: 22px 15px;
-            }
-
-            .header-left {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .title {
-                font-size: 19px;
-            }
-
-            .header-right {
-                text-align: center;
-            }
-
-            .navigation {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="transport-hotel.css">
+    <script src="transport-hotel.js" defer></script>
 </head>
 
 <body>
 
+    <!-- READING PROGRESS -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <main class="container">
 
-        <div class="section-number">
-            <span>Section 03</span>
-        </div>
+        <!-- HEADER -->
+        <header class="page-header">
+            <div class="header-number">03</div>
 
-        <div class="card">
+            <div class="header-content">
+                <p class="eyebrow">PUY DU FOU ESPAÑA & TOLEDO</p>
+                <h1>Transport <span>&</span> Accommodation</h1>
+                <p class="subtitle">Comfort, convenience and relaxation</p>
+            </div>
+        </header>
 
-            <header class="header">
+        <!-- INTRODUCTION -->
+        <section class="introduction reveal">
+            <p class="section-label">TRAVEL IN COMFORT</p>
+            <h2>Every detail matters.</h2>
+            <p>
+                We have carefully selected comfortable transport and
+                five-star accommodation to make this trip special.
+                Enjoy a relaxing journey and discover a hotel where
+                luxury, wellness and excellent service come together.
+            </p>
+        </section>
 
-                <div class="header-left">
-
-                    <span class="number">03</span>
-
-                    <span class="title">
-                        Transport & Accommodation
-                    </span>
-
-                </div>
-
-                <div class="header-right">
-                    Puy du Fou<br>
-                    & Toledo
-                </div>
-
-            </header>
-
-            <!-- COMPLETE CANVA IMAGE -->
-
-            <img
-                src="../images/Transporte y alojamiento en Toledo.png"
-                alt="Transport and accommodation in Toledo"
-                class="canva-image"
-            >
-
-            <div class="footer"></div>
-
-        </div>
-
-        <!-- NAVIGATION -->
-
-        <nav class="navigation">
-
-            <a href="../index.html">
-                ← BACK TO HOME
+        <!-- QUICK NAVIGATION -->
+        <nav class="quick-navigation">
+            <a href="#transport">
+                <span>01</span>
+                TRANSPORT
+                <span class="arrow">↓</span>
             </a>
 
-            <a href="itinerary.html">
-                NEXT: ITINERARY →
+            <a href="#accommodation">
+                <span>02</span>
+                ACCOMMODATION
+                <span class="arrow">↓</span>
             </a>
-
         </nav>
 
+        <!-- TRANSPORT SECTION -->
+        <section class="main-section reveal" id="transport">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">01 · GETTING AROUND</p>
+                    <h2>Premium Transport</h2>
+                </div>
+
+                <p class="section-description">
+                    Travel in total comfort
+                </p>
+            </div>
+
+            <div class="transport-layout">
+
+                <div class="transport-image">
+                    <img
+                        class="lightbox-trigger"
+                        src="https://images.squarespace-cdn.com/content/685a75b09ed975631f558bc8/9bb891c9-aa55-4203-aa9e-de9a5f3c527a/Mercedes%2BBenz%2BSprinter%2Bminibus.jpg?content-type=image%2Fjpeg"
+                        alt="Mercedes-Benz Sprinter passenger minibus"
+                        loading="lazy"
+                    >
+                    <span class="image-tag">GROUP TRANSPORT</span>
+                </div>
+
+                <div class="transport-information">
+
+                    <p class="gold-label">OUR CHOICE</p>
+
+                    <h3>Private Minibus</h3>
+
+                    <p>
+                        We have chosen a modern passenger minibus
+                        to make travelling together easier and
+                        more comfortable. It offers a practical
+                        solution for the journeys during our trip.
+                    </p>
+
+                    <div class="transport-benefits">
+
+                        <div class="benefit">
+                            <span class="benefit-icon">✦</span>
+                            <div>
+                                <h4>Comfortable Seating</h4>
+                                <p>Designed for a pleasant journey.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <span class="benefit-icon">✦</span>
+                            <div>
+                                <h4>Air Conditioning</h4>
+                                <p>A comfortable temperature inside.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <span class="benefit-icon">✦</span>
+                            <div>
+                                <h4>Spacious Interior</h4>
+                                <p>Room for passengers and luggage.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <span class="benefit-icon">✦</span>
+                            <div>
+                                <h4>Group Travel</h4>
+                                <p>Everyone can travel together.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="details-button"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="transportDetails"
+                    >
+                        MORE ABOUT OUR TRANSPORT
+                        <span>+</span>
+                    </button>
+
+                    <div class="details-panel" id="transportDetails" hidden>
+                        <p>
+                            Travelling by minibus makes group transfers
+                            easier to organise. The exact vehicle,
+                            passenger capacity and services will depend
+                            on the transport provider selected for
+                            the final booking.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOTEL SECTION -->
+        <section class="main-section hotel-section reveal" id="accommodation">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">02 · WHERE WE STAY</p>
+                    <h2>Five-Star Accommodation</h2>
+                </div>
+
+                <p class="section-description">
+                    Luxury and relaxation in Toledo
+                </p>
+            </div>
+
+            <div class="hotel-introduction">
+                <div>
+                    <p class="gold-label">OUR SELECTED HOTEL · 5 STARS</p>
+                    <h3>Eurostars Palacio Buenavista</h3>
+                    <p class="hotel-location">Toledo · Spain</p>
+                </div>
+
+                <a
+                    class="hotel-website"
+                    href="https://www.eurostarshotels.com/eurostars-palacio-buenavista.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    OFFICIAL HOTEL WEBSITE ↗
+                </a>
+            </div>
+
+            <p class="hotel-description">
+                A historic palace transformed into an elegant five-star
+                hotel. Enjoy beautiful surroundings, relaxing facilities
+                and excellent gastronomy during your stay in Toledo.
+            </p>
+
+            <!-- HOTEL SERVICES GALLERY -->
+            <div class="services-grid">
+
+                <!-- ROOMS -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://images.trvl-media.com/lodging/2000000/1690000/1683100/1683053/49004768.jpg?h=800&impolicy=fcrop&quality=medium&w=1200"
+                            alt="Guest room at Eurostars Palacio Buenavista"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">01</p>
+                        <h3>Luxury Rooms</h3>
+                        <p>
+                            Spacious rooms designed to provide
+                            comfort, rest and a relaxing atmosphere.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="roomDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="roomDetails" hidden>
+                            <p>
+                                The hotel offers elegant rooms and suites,
+                                comfortable beds, bathrooms, television
+                                and Wi-Fi access.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SPA -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+                            alt="Relaxing spa and wellness facilities"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">02</p>
+                        <h3>Spa & Wellness</h3>
+                        <p>
+                            A place to relax and enjoy a moment
+                            of well-being.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="spaDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="spaDetails" hidden>
+                            <p>
+                                Spalace Wellness Center offers a
+                                hydrothermal circuit, massages and
+                                beauty treatments in a 1,500 m² spa.
+                                Access and treatments may require
+                                a separate reservation or payment.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- RESTAURANT -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=85"
+                            alt="Elegant restaurant dining room"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">03</p>
+                        <h3>Gourmet Restaurant</h3>
+                        <p>
+                            Discover local gastronomy and enjoy
+                            a special dining experience.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="restaurantDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="restaurantDetails" hidden>
+                            <p>
+                                Restaurante Quixote combines traditional
+                                Manchegan gastronomy with contemporary
+                                culinary ideas. The hotel also has a
+                                Lobby Bar and a terrace with city views.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GARDENS -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://www.turismocastillalamancha.es/content/dam/jccm-tourism/multimedia/imagenes/es/alojamientos/imagenes/toledo/hotel-eurostars-palacio-buenavista/GALERIA/01-Eurostars-buenavista.jpg"
+                            alt="Gardens and exterior at Eurostars Palacio Buenavista"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">04</p>
+                        <h3>Beautiful Gardens</h3>
+                        <p>
+                            Enjoy peaceful outdoor spaces
+                            surrounded by greenery.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="gardenDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="gardenDetails" hidden>
+                            <p>
+                                The hotel has landscaped gardens and
+                                outdoor areas where guests can enjoy
+                                a peaceful atmosphere.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VIEWS -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1200&q=85"
+                            alt="Panoramic view of Toledo"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">05</p>
+                        <h3>Views of Toledo</h3>
+                        <p>
+                            Admire the historic city and the
+                            beautiful surroundings of the River Tagus.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="viewsDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="viewsDetails" hidden>
+                            <p>
+                                The hotel's location offers panoramic
+                                views towards Toledo's historic skyline
+                                and the surrounding landscape.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POOL -->
+                <article class="service-card reveal">
+                    <div class="service-image">
+                        <img
+                            class="lightbox-trigger"
+                            src="https://fotografias-2.larazon.es/clipping/cmsimages01/2025/07/17/767C3113-7792-4AD3-ACDA-C2178590A12A/hotel-eurostars-palacio-buenavista-toledo_69.jpg?crop=1179%2C663%2Cx0%2Cy161&format=jpg&height=720&optimize=low&width=1280"
+                            alt="Outdoor swimming pool at the hotel"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="service-content">
+                        <p class="service-number">06</p>
+                        <h3>Outdoor Swimming Pool</h3>
+                        <p>
+                            Enjoy the outdoor pool during
+                            the summer season.
+                        </p>
+
+                        <button class="service-toggle"
+                            aria-expanded="false"
+                            aria-controls="poolDetails">
+                            DISCOVER MORE <span>+</span>
+                        </button>
+
+                        <div class="service-details" id="poolDetails" hidden>
+                            <p>
+                                The hotel has a seasonal outdoor swimming
+                                pool. Opening dates and times depend
+                                on the season.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- HOTEL SERVICES STRIP -->
+            <div class="hotel-extras">
+
+                <div class="extra-item">
+                    <span class="extra-icon">⌁</span>
+                    <div>
+                        <h4>Free Wi-Fi</h4>
+                        <p>Internet access throughout the hotel.</p>
+                    </div>
+                </div>
+
+                <div class="extra-item">
+                    <span class="extra-icon">✧</span>
+                    <div>
+                        <h4>24-Hour Fitness</h4>
+                        <p>Fitness facilities available for guests.</p>
+                    </div>
+                </div>
+
+                <div class="extra-item">
+                    <span class="extra-icon">♧</span>
+                    <div>
+                        <h4>Hotel Parking</h4>
+                        <p>Covered parking facilities.</p>
+                    </div>
+                </div>
+
+                <div class="extra-item">
+                    <span class="extra-icon">✦</span>
+                    <div>
+                        <h4>Five-Star Service</h4>
+                        <p>Comfort, attention and quality.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="hotel-note">
+                Some facilities may have seasonal opening times,
+                age restrictions, reservation requirements or
+                additional charges. Please check directly with the hotel.
+            </p>
+
+        </section>
+
+        <!-- FINAL MESSAGE -->
+        <section class="closing-section reveal">
+            <p class="closing-symbol">✦</p>
+            <h2>Your comfort is part of the experience.</h2>
+            <p>
+                From the journey to the hotel, every detail has
+                been selected to make this trip memorable.
+            </p>
+        </section>
+
+        <!-- NAVIGATION -->
+        <nav class="page-navigation">
+            <a href="destination.html">← PREVIOUS: DESTINATION</a>
+            <a href="../index.html">BACK TO HOME</a>
+            <a href="itinerary.html">NEXT: ITINERARY →</a>
+        </nav>
+
+        <!-- PHOTO SOURCES -->
+        <footer class="page-footer">
+            <p>THE PERFECT TRIP · TOLEDO & PUY DU FOU ESPAÑA</p>
+
+            <details class="photo-credits">
+                <summary>Photo sources and hotel information</summary>
+
+                <ul>
+                    <li>
+                        <a href="https://www.eurostarshotels.com/eurostars-palacio-buenavista.html"
+                           target="_blank" rel="noopener">
+                            Eurostars Palacio Buenavista – Official website
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.turismocastillalamancha.es/es/alojamientos/hoteles/toledo/eurostars-palacio-buenavista-de-toledo"
+                           target="_blank" rel="noopener">
+                            Tourism of Castilla-La Mancha
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.eurostarshotels.com/eurostars-palacio-buenavista/spa.html"
+                           target="_blank" rel="noopener">
+                            Spalace Wellness Center
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.eurostarshotels.com/eurostars-palacio-buenavista/restauracion.html"
+                           target="_blank" rel="noopener">
+                            Hotel restaurants
+                        </a>
+                    </li>
+                </ul>
+
+                <p>
+                    Photographs hosted by external websites.
+                    Check image-use permissions before public publication.
+                </p>
+            </details>
+        </footer>
+
     </main>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+
+        <button class="lightbox-close" aria-label="Close image">×</button>
+
+        <button class="lightbox-prev" aria-label="Previous image">‹</button>
+
+        <img src="" alt="" id="lightboxImage">
+
+        <button class="lightbox-next" aria-label="Next image">›</button>
+
+        <p id="lightboxCaption"></p>
+
+    </div>
 
 </body>
 </html>
