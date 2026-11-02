@@ -1,0 +1,780 @@
+
+/* =========================================
+   THE PERFECT TRIP - CLIENT PROFILE
+   LUXURY TRAVEL + CINEMATIC DESIGN
+========================================= */
+
+:root {
+    --burgundy: #35121d;
+    --burgundy-light: #512330;
+    --gold: #c6a15b;
+    --cream: #f8f5ef;
+    --dark: #21191a;
+    --sage: #a3b59b;
+}
+
+.profile-page {
+    margin: 0;
+    background: var(--cream);
+    color: var(--dark);
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+.profile-page * {
+    box-sizing: border-box;
+}
+
+.profile-page a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* HEADER */
+
+.profile-header {
+    height: 82px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--burgundy);
+    color: var(--cream);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.brand-symbol {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.back-link {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: color .3s ease;
+}
+
+.back-link span {
+    color: var(--gold);
+    margin-right: 8px;
+}
+
+.back-link:hover {
+    color: var(--gold);
+}
+
+
+/* HERO */
+
+.profile-hero {
+    min-height: 690px;
+    height: calc(100vh - 82px);
+    max-height: 900px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    background: var(--burgundy);
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Toledo_cyl-panorama-mirador.jpg");
+    background-size: cover;
+    background-position: center 48%;
+
+    transform: scale(1.04);
+    transition: transform 8s ease;
+}
+
+.profile-hero:hover .hero-background {
+    transform: scale(1.09);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 12, 20, .94) 0%,
+            rgba(35, 12, 20, .72) 43%,
+            rgba(35, 12, 20, .12) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(35, 12, 20, .48),
+            transparent 40%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(720px, 80%);
+    margin-left: 11%;
+    padding: 70px 0;
+}
+
+.eyebrow,
+.section-label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-weight: normal;
+}
+
+.hero-content h1 {
+    font-size: clamp(65px, 9vw, 125px);
+    line-height: .91;
+    font-weight: normal;
+    letter-spacing: -4px;
+    margin: 32px 0;
+}
+
+.hero-content h1 em,
+.intro-heading h2 em,
+.section-heading h2 em,
+.traveller-content h2 em,
+.closing-content h2 em {
+    color: var(--gold);
+    font-weight: normal;
+}
+
+.gold-line {
+    width: 75px;
+    height: 2px;
+    background: var(--gold);
+    margin: 34px 0;
+}
+
+.hero-description {
+    max-width: 390px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255,255,255,.83);
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+    padding: 17px 24px;
+    border: 1px solid var(--gold);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    transition: all .35s ease;
+}
+
+.hero-button span {
+    color: var(--gold);
+    font-size: 16px;
+}
+
+.hero-button:hover {
+    background: var(--gold);
+    color: var(--burgundy);
+}
+
+.hero-button:hover span {
+    color: var(--burgundy);
+}
+
+.hero-caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.75);
+}
+
+
+/* GENERAL SECTIONS */
+
+.section-padding {
+    padding: 120px 11%;
+}
+
+.intro-heading h2,
+.section-heading h2,
+.traveller-content h2 {
+    font-size: clamp(43px, 5vw, 68px);
+    line-height: 1.05;
+    font-weight: normal;
+    margin: 25px 0;
+}
+
+.intro-heading h2 em,
+.traveller-content h2 em {
+    color: var(--burgundy-light);
+}
+
+
+/* INTRODUCTION */
+
+.profile-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.intro-heading {
+    max-width: 500px;
+}
+
+.intro-text {
+    border-left: 1px solid rgba(198,161,91,.7);
+    padding-left: 45px;
+}
+
+.intro-text p {
+    font-size: 16px;
+    line-height: 2;
+    color: #62595a;
+    margin: 0 0 22px;
+}
+
+.intro-signature {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--burgundy);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+
+/* MOTIVATIONS */
+
+.motivations-section {
+    background: #f0ebe3;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 70px;
+}
+
+.section-heading h2 {
+    color: var(--burgundy);
+}
+
+.heading-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #766c6a;
+}
+
+.motivation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.motivation-card {
+    position: relative;
+    min-height: 350px;
+    padding: 42px 34px;
+    background: var(--cream);
+    border: 1px solid rgba(198,161,91,.3);
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        color .4s ease,
+        box-shadow .4s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.motivation-card:hover,
+.motivation-card:focus-visible,
+.motivation-card.active {
+    transform: translateY(-12px);
+    background: var(--burgundy);
+    color: white;
+    box-shadow: 0 20px 45px rgba(53,18,29,.17);
+}
+
+.card-number {
+    position: absolute;
+    top: 25px;
+    right: 28px;
+    font-size: 13px;
+    color: var(--gold);
+}
+
+.card-icon {
+    color: var(--gold);
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.motivation-card h3 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.motivation-card p {
+    color: #756c69;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 0 0 30px;
+    transition: color .3s ease;
+}
+
+.motivation-card:hover p,
+.motivation-card:focus-visible p,
+.motivation-card.active p {
+    color: rgba(255,255,255,.78);
+}
+
+.card-bottom {
+    margin-top: auto;
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* TRAVELLER PROFILE */
+
+.traveller-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 720px;
+    background: var(--burgundy);
+    color: var(--cream);
+}
+
+.traveller-image {
+    min-height: 650px;
+    position: relative;
+    background-image:
+        linear-gradient(rgba(35,12,20,.08), rgba(35,12,20,.35)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Toledo_cyl-panorama-mirador.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 35px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.traveller-content {
+    padding: 100px 12%;
+    align-self: center;
+}
+
+.traveller-content h2 {
+    color: white;
+}
+
+.traveller-description {
+    color: rgba(255,255,255,.72);
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 30px 0 45px;
+}
+
+.profile-facts {
+    border-top: 1px solid rgba(198,161,91,.4);
+}
+
+.fact {
+    display: flex;
+    gap: 25px;
+    padding: 23px 0;
+    border-bottom: 1px solid rgba(198,161,91,.3);
+}
+
+.fact-number {
+    color: var(--gold);
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.fact h4 {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin: 0 0 9px;
+}
+
+.fact p {
+    color: rgba(255,255,255,.7);
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* CLOSING */
+
+.profile-closing {
+    min-height: 500px;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(rgba(248,245,239,.94), rgba(248,245,239,.94)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Toledo_cyl-panorama-mirador.jpg")
+        center / cover;
+}
+
+.closing-content {
+    max-width: 750px;
+}
+
+.closing-symbol {
+    display: block;
+    color: var(--gold);
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.closing-content h2 {
+    color: var(--burgundy);
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: normal;
+    line-height: 1.15;
+    margin: 25px 0;
+}
+
+.closing-content h2 em {
+    color: var(--burgundy-light);
+}
+
+.closing-content > p:not(.section-label) {
+    color: #756c69;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.next-button {
+    display: inline-flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 35px;
+    padding: 18px 27px;
+    background: var(--burgundy);
+    color: white !important;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    transition: background .3s ease;
+}
+
+.next-button span {
+    color: var(--gold);
+    font-size: 16px;
+}
+
+.next-button:hover {
+    background: var(--burgundy-light);
+}
+
+
+/* FOOTER */
+
+.profile-footer {
+    min-height: 85px;
+    padding: 25px 7%;
+    background: #241017;
+    color: rgba(255,255,255,.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.profile-footer a:first-child {
+    color: var(--gold);
+}
+
+.profile-footer a:last-child:hover {
+    color: var(--gold);
+}
+
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .profile-intro {
+        gap: 45px;
+    }
+
+    .motivation-grid {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        margin: auto;
+    }
+
+    .motivation-card {
+        min-height: 290px;
+    }
+
+    .traveller-section {
+        grid-template-columns: 1fr;
+    }
+
+    .traveller-image {
+        min-height: 430px;
+    }
+
+    .traveller-content {
+        padding: 80px 11%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .profile-header {
+        height: 70px;
+        padding: 0 6%;
+    }
+
+    .brand {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .back-link {
+        font-size: 8px;
+    }
+
+    .profile-hero {
+        min-height: 650px;
+        height: 85vh;
+    }
+
+    .hero-content {
+        width: 88%;
+        margin-left: 7%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(55px, 15vw, 85px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-caption {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .section-padding {
+        padding: 80px 7%;
+    }
+
+    .profile-intro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .intro-text {
+        padding-left: 25px;
+    }
+
+    .intro-heading h2,
+    .section-heading h2,
+    .traveller-content h2 {
+        font-size: 45px;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .traveller-image {
+        min-height: 350px;
+    }
+
+    .traveller-content {
+        padding: 75px 8%;
+    }
+
+    .profile-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+    }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================================
+   TYPOGRAPHY SIZE ENHANCEMENT
+========================================= */
+
+/* Textos generales */
+.profile-page {
+    font-size: 17px;
+}
+
+/* Textos pequeños de sección */
+.section-label,
+.eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+/* Texto principal del hero */
+.hero-description {
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+/* Introducción */
+.intro-text p {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+/* Descripción de las tarjetas */
+.motivation-card p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.motivation-card h3 {
+    font-size: 17px;
+}
+
+/* Perfil del viajero */
+.traveller-description {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.fact h4 {
+    font-size: 12px;
+}
+
+.fact p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Texto final */
+.closing-content > p:not(.section-label) {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* Navegación y botones */
+.hero-button,
+.next-button {
+    font-size: 11px;
+}
+
+.back-link {
+    font-size: 11px;
+}
+
+/* Pie de página */
+.profile-footer {
+    font-size: 11px;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 650px) {
+    .intro-text p {
+        font-size: 17px;
+    }
+
+    .motivation-card p {
+        font-size: 16px;
+    }
+
+    .traveller-description {
+        font-size: 16px;
+    }
+
+    .fact p {
+        font-size: 15px;
+    }
+}

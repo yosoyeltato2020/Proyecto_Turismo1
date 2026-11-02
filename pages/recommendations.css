@@ -1,0 +1,1017 @@
+
+/* =========================================
+   THE PERFECT TRIP
+   RECOMMENDATIONS PAGE
+========================================= */
+
+:root {
+    --rec-burgundy: #35121d;
+    --rec-burgundy-light: #512330;
+    --rec-gold: #c6a15b;
+    --rec-cream: #f8f5ef;
+    --rec-sage: #a3b59b;
+    --rec-text: #3d3030;
+    --rec-muted: #81766e;
+}
+
+
+/* GENERAL */
+
+.recommendations-page {
+    margin: 0;
+    background: var(--rec-cream);
+    color: var(--rec-text);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.recommendations-page * {
+    box-sizing: border-box;
+}
+
+.recommendations-page img {
+    max-width: 100%;
+}
+
+.recommendations-page a {
+    text-decoration: none;
+}
+
+
+/* HEADER */
+
+.rec-header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: rgba(35, 12, 20, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rec-logo {
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.rec-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.rec-nav a {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.rec-nav a:hover {
+    color: var(--rec-gold);
+}
+
+
+/* HERO */
+
+.rec-hero {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 8% 90px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(35, 12, 20, 0.55), rgba(35, 12, 20, 0.78)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Toledo_cyl-panorama-mirador.jpg?width=1800");
+    background-size: cover;
+    background-position: center;
+}
+
+.rec-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(53, 18, 29, 0.55),
+        rgba(53, 18, 29, 0.12),
+        rgba(53, 18, 29, 0.55)
+    );
+}
+
+.rec-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+}
+
+.rec-eyebrow {
+    margin: 0 0 14px;
+    color: var(--rec-gold);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.rec-hero h1 {
+    margin: 15px 0;
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: normal;
+    letter-spacing: 4px;
+}
+
+.rec-hero h2 {
+    margin: 15px 0;
+    color: #ead9b8;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: normal;
+}
+
+.rec-hero-content > p:not(.rec-eyebrow) {
+    max-width: 600px;
+    margin: 20px auto 32px;
+    color: #eee6dc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* BUTTONS */
+
+.rec-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 15px 25px;
+    border: 1px solid var(--rec-gold);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    transition: all 0.3s ease;
+}
+
+.rec-button:hover {
+    background: var(--rec-gold);
+    color: var(--rec-burgundy);
+}
+
+.rec-button span {
+    font-size: 17px;
+}
+
+
+/* INTRODUCTION */
+
+.rec-intro {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 100px 25px 80px;
+    text-align: center;
+}
+
+.rec-intro h2 {
+    margin: 12px 0 20px;
+    color: var(--rec-burgundy);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: normal;
+}
+
+.rec-intro > p:last-child {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--rec-muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* SECTIONS */
+
+.rec-section {
+    padding: 85px 8%;
+}
+
+.rec-section-alt {
+    background: #f0ebe2;
+}
+
+.rec-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto 35px;
+}
+
+.rec-section-heading > span {
+    color: var(--rec-gold);
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.rec-section-heading .rec-eyebrow {
+    margin-bottom: 8px;
+}
+
+.rec-section-heading h2 {
+    margin: 0;
+    color: var(--rec-burgundy);
+    font-size: clamp(27px, 4vw, 38px);
+    font-weight: normal;
+}
+
+.rec-section-description {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    color: var(--rec-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+/* BEFORE YOU TRAVEL */
+
+.rec-feature-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.rec-feature-card {
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: var(--rec-burgundy);
+}
+
+.rec-feature-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.rec-feature-card:hover img {
+    transform: scale(1.04);
+}
+
+.rec-card-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px;
+    color: white;
+    background: linear-gradient(transparent, rgba(35, 12, 20, 0.94));
+}
+
+.rec-card-number {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--rec-gold);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.rec-card-content h3,
+.rec-tip h3 {
+    margin: 0 0 12px;
+    color: var(--rec-cream);
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.rec-card-content p,
+.rec-tip p {
+    margin: 0;
+    color: #e7ded5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.rec-tip-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 35px;
+    border: 1px solid rgba(198, 161, 91, 0.45);
+    background: var(--rec-burgundy);
+}
+
+.rec-tip {
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rec-tip:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+/* SHOPPING CAROUSEL */
+
+.rec-shopping-carousel {
+    position: relative;
+    max-width: 950px;
+    margin: 40px auto 20px;
+}
+
+.rec-carousel-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--rec-burgundy);
+}
+
+.rec-carousel-image img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+.rec-carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 65px 40px 35px;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(25, 10, 15, 0.92)
+    );
+}
+
+.rec-carousel-caption span,
+.rec-place-description span {
+    color: #dfc58d;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.rec-carousel-caption h3 {
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.rec-carousel-caption p {
+    max-width: 550px;
+    margin: 0;
+    color: #eee6dc;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.rec-carousel-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--rec-cream);
+    color: var(--rec-burgundy);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-carousel-arrow:hover {
+    background: var(--rec-gold);
+}
+
+.rec-carousel-arrow.prev {
+    left: 18px;
+}
+
+.rec-carousel-arrow.next {
+    right: 18px;
+}
+
+.rec-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 22px;
+}
+
+.rec-carousel-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #c9c0b5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-carousel-dots button.active {
+    background: var(--rec-gold);
+    transform: scale(1.35);
+}
+
+.rec-carousel-note {
+    margin: 20px 0 0;
+    color: var(--rec-muted);
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* INTERACTIVE TOLEDO PLACES */
+
+.rec-place-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 1100px;
+    margin: 35px auto 25px;
+}
+
+.rec-place-button {
+    min-height: 65px;
+    padding: 15px 12px;
+    border: 1px solid var(--rec-gold);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--rec-burgundy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-place-button:hover,
+.rec-place-button.active {
+    background: var(--rec-burgundy);
+    color: var(--rec-cream);
+}
+
+.rec-place-display {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    max-width: 1100px;
+    min-height: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--rec-burgundy);
+    color: var(--rec-cream);
+}
+
+.rec-place-display img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.rec-place-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.rec-place-description h3 {
+    margin: 16px 0;
+    color: #dfc58d;
+    font-size: 29px;
+    font-weight: normal;
+}
+
+.rec-place-description p {
+    margin: 0;
+    color: #eee6dc;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* PUY DU FOU */
+
+.rec-puy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.rec-puy-card {
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--rec-burgundy);
+    color: white;
+}
+
+.rec-puy-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rec-puy-card:hover img {
+    transform: scale(1.03);
+}
+
+.rec-puy-content {
+    padding: 28px;
+}
+
+.rec-puy-content > span {
+    color: var(--rec-gold);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.rec-puy-content h3 {
+    margin: 12px 0;
+    color: var(--rec-cream);
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.rec-puy-content p {
+    margin: 0;
+    color: #e7ded5;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.rec-show-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 35px auto 0;
+}
+
+.rec-show-list article {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 25px;
+    border: 1px solid rgba(198, 161, 91, 0.5);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.rec-show-list article > span {
+    color: var(--rec-gold);
+    font-size: 30px;
+}
+
+.rec-show-list h3 {
+    margin: 0 0 10px;
+    color: var(--rec-burgundy);
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.rec-show-list p {
+    margin: 0;
+    color: var(--rec-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.rec-note {
+    max-width: 850px;
+    margin: 30px auto 0;
+    color: var(--rec-muted);
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* CHECKLIST */
+
+.rec-checklist-section {
+    background: var(--rec-cream);
+}
+
+.rec-checklist {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 38px;
+    border: 1px solid rgba(198, 161, 91, 0.55);
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(53, 18, 29, 0.06);
+}
+
+.rec-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+    color: var(--rec-burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.rec-progress-header strong {
+    color: var(--rec-gold);
+    font-size: 14px;
+}
+
+.rec-progress-track {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e9e3d9;
+}
+
+.rec-progress-bar {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--rec-gold);
+    transition: width 0.35s ease;
+}
+
+.rec-checklist-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 25px;
+    margin-top: 25px;
+}
+
+.rec-check-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 58px;
+    border-bottom: 1px solid #eee8df;
+    color: var(--rec-text);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.rec-check-item input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.custom-check {
+    position: relative;
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+    border: 1px solid var(--rec-gold);
+    border-radius: 3px;
+    background: white;
+}
+
+.rec-check-item input:checked + .custom-check {
+    background: var(--rec-burgundy);
+    border-color: var(--rec-burgundy);
+}
+
+.rec-check-item input:checked + .custom-check::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: white;
+    font-size: 15px;
+}
+
+.rec-check-item input:focus-visible + .custom-check {
+    outline: 2px solid var(--rec-gold);
+    outline-offset: 3px;
+}
+
+.rec-check-item input:checked ~ span:last-child {
+    color: #948b82;
+    text-decoration: line-through;
+}
+
+.rec-complete-message {
+    min-height: 22px;
+    margin: 25px 0 10px;
+    color: var(--rec-sage);
+    font-size: 15px;
+    text-align: center;
+}
+
+.rec-reset-button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 12px 22px;
+    border: 1px solid var(--rec-burgundy);
+    background: transparent;
+    color: var(--rec-burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-reset-button:hover {
+    background: var(--rec-burgundy);
+    color: white;
+}
+
+
+/* FINAL MESSAGE */
+
+.rec-final-message {
+    padding: 90px 25px;
+    background: var(--rec-burgundy);
+    color: white;
+    text-align: center;
+}
+
+.rec-gold-line {
+    width: 65px;
+    height: 2px;
+    margin: 0 auto 30px;
+    background: var(--rec-gold);
+}
+
+.rec-final-message h2 {
+    margin: 15px 0;
+    color: var(--rec-cream);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: normal;
+}
+
+.rec-final-message > p:not(.rec-eyebrow) {
+    margin: 15px 0 30px;
+    color: #e7ded5;
+    font-size: 15px;
+}
+
+
+/* FOOTER */
+
+.rec-footer {
+    padding: 45px 20px 30px;
+    background: #241018;
+    color: white;
+    text-align: center;
+}
+
+.rec-footer-decoration {
+    width: 45px;
+    height: 1px;
+    margin: 0 auto 25px;
+    background: var(--rec-gold);
+}
+
+.rec-footer-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.rec-footer-destination {
+    margin: 0 0 12px;
+    color: var(--rec-gold);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.rec-footer-motto {
+    margin: 0 0 25px;
+    color: #c9bdb7;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.rec-back-to-top {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.rec-back-to-top:hover {
+    color: var(--rec-gold);
+}
+
+.rec-photo-credits {
+    max-width: 850px;
+    margin: 15px auto 0;
+    color: #bdb0aa;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.rec-photo-credits a {
+    color: var(--rec-gold);
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .rec-header {
+        padding: 18px 5%;
+    }
+
+    .rec-nav {
+        gap: 16px;
+    }
+
+    .rec-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rec-feature-card {
+        min-height: 400px;
+    }
+
+    .rec-place-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rec-place-display {
+        grid-template-columns: 1fr;
+    }
+
+    .rec-place-display img {
+        height: 320px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .rec-header {
+        position: absolute;
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 15px;
+    }
+
+    .rec-logo {
+        font-size: 16px;
+    }
+
+    .rec-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .rec-nav a {
+        font-size: 9px;
+    }
+
+    .rec-hero {
+        min-height: 570px;
+        padding: 150px 20px 70px;
+    }
+
+    .rec-hero h1 {
+        letter-spacing: 2px;
+    }
+
+    .rec-intro {
+        padding: 70px 22px;
+    }
+
+    .rec-section {
+        padding: 65px 20px;
+    }
+
+    .rec-section-heading {
+        gap: 15px;
+    }
+
+    .rec-section-heading > span {
+        font-size: 38px;
+    }
+
+    .rec-feature-card {
+        min-height: 350px;
+    }
+
+    .rec-tip-card {
+        padding: 25px;
+    }
+
+    .rec-carousel-image img {
+        height: 350px;
+    }
+
+    .rec-carousel-caption {
+        padding: 45px 22px 25px;
+    }
+
+    .rec-carousel-caption h3 {
+        font-size: 23px;
+    }
+
+    .rec-carousel-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .rec-carousel-arrow.prev {
+        left: 10px;
+    }
+
+    .rec-carousel-arrow.next {
+        right: 10px;
+    }
+
+    .rec-place-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rec-place-button {
+        font-size: 12px;
+    }
+
+    .rec-place-display img {
+        height: 250px;
+    }
+
+    .rec-place-description {
+        padding: 28px;
+    }
+
+    .rec-puy-grid,
+    .rec-show-list {
+        grid-template-columns: 1fr;
+    }
+
+    .rec-puy-card img {
+        height: 230px;
+    }
+
+    .rec-checklist {
+        padding: 25px 20px;
+    }
+
+    .rec-checklist-items {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .rec-place-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .rec-carousel-image img {
+        height: 300px;
+    }
+
+}

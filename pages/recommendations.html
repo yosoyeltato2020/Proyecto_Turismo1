@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recommendations | THE PERFECT TRIP</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="recommendations.css">
+
+    <script src="../script.js" defer></script>
+    <script src="recommendations.js" defer></script>
+</head>
+
+<body class="recommendations-page" id="top">
+
+    <!-- HEADER -->
+    <header class="rec-header">
+        <a href="../index.html" class="rec-logo">THE PERFECT TRIP</a>
+
+        <nav class="rec-nav">
+            <a href="../index.html">HOME</a>
+            <a href="#before-travel">RECOMMENDATIONS</a>
+            <a href="#essentials">CHECKLIST</a>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="rec-hero">
+
+        <div class="rec-hero-overlay"></div>
+
+        <div class="rec-hero-content">
+            <p class="rec-eyebrow">07 — YOUR TRAVEL GUIDE</p>
+
+            <h1>RECOMMENDATIONS</h1>
+
+            <h2>Make the most of your experience</h2>
+
+            <p>
+                A few useful tips to help you enjoy Toledo
+                and Puy du Fou España to the fullest.
+            </p>
+
+            <a href="#before-travel" class="rec-button">
+                EXPLORE THE GUIDE <span>↓</span>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="rec-intro">
+
+        <p class="rec-eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+        <h2>Travel prepared. Enjoy every moment.</h2>
+
+        <p>
+            Discover local traditions, explore historic places
+            and enjoy unforgettable shows. These recommendations
+            will help you make your trip more comfortable and memorable.
+        </p>
+
+    </section>
+
+
+    <!-- 01 BEFORE YOU TRAVEL -->
+    <section class="rec-section" id="before-travel">
+
+        <div class="rec-section-heading">
+            <span>01</span>
+
+            <div>
+                <p class="rec-eyebrow">BEFORE YOU TRAVEL</p>
+                <h2>Prepare for your trip</h2>
+            </div>
+        </div>
+
+        <div class="rec-feature-grid">
+
+            <article class="rec-feature-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Toledo_cyl-panorama-mirador.jpg?width=1200"
+                    alt="Panoramic view of Toledo"
+                    loading="lazy"
+                >
+
+                <div class="rec-card-content">
+                    <span class="rec-card-number">01 / COMFORT</span>
+
+                    <h3>Comfortable footwear</h3>
+
+                    <p>
+                        Toledo has steep streets and cobbled paths.
+                        Wear comfortable shoes suitable for walking.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="rec-tip-card">
+
+                <div class="rec-tip">
+                    <span class="rec-card-number">02 / CLOTHING</span>
+                    <h3>Choose suitable clothing</h3>
+
+                    <p>
+                        Check the weather forecast and bring clothes
+                        appropriate for the season.
+                    </p>
+                </div>
+
+                <div class="rec-tip">
+                    <span class="rec-card-number">03 / DOCUMENTS</span>
+                    <h3>Travel documents</h3>
+
+                    <p>
+                        Remember your ID card or passport and keep
+                        your booking information accessible.
+                    </p>
+                </div>
+
+                <div class="rec-tip">
+                    <span class="rec-card-number">04 / PROTECTION</span>
+                    <h3>Sun protection</h3>
+
+                    <p>
+                        Sunglasses, sunscreen and a hat can be useful,
+                        especially during sunny days.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- 02 WHAT TO BUY IN TOLEDO -->
+    <section class="rec-section rec-section-alt" id="what-to-buy">
+
+        <div class="rec-section-heading">
+            <span>02</span>
+
+            <div>
+                <p class="rec-eyebrow">LOCAL TRADITIONS</p>
+                <h2>What to buy in Toledo</h2>
+            </div>
+        </div>
+
+        <p class="rec-section-description">
+            Discover traditional products and take home a little
+            piece of Toledo.
+        </p>
+
+
+        <!-- ONLINE PHOTO CAROUSEL -->
+        <div class="rec-shopping-carousel">
+
+            <div class="rec-carousel-image">
+
+                <img
+                    id="shopping-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Damasquinado.jpg?width=1200"
+                    alt="Traditional damascene craftsmanship"
+                >
+
+                <div class="rec-carousel-caption">
+                    <span id="shopping-number">01 / 04</span>
+
+                    <h3 id="shopping-title">Damascene jewellery</h3>
+
+                    <p id="shopping-description">
+                        Traditional gold and silver designs
+                        crafted by local artisans.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <button
+                class="rec-carousel-arrow prev"
+                id="shopping-prev"
+                type="button"
+                aria-label="Previous photograph"
+            >
+                &#10094;
+            </button>
+
+
+            <button
+                class="rec-carousel-arrow next"
+                id="shopping-next"
+                type="button"
+                aria-label="Next photograph"
+            >
+                &#10095;
+            </button>
+
+
+            <div class="rec-carousel-dots" id="shopping-dots">
+
+                <button
+                    class="active"
+                    data-slide="0"
+                    type="button"
+                    aria-label="Photo 1"
+                ></button>
+
+                <button
+                    data-slide="1"
+                    type="button"
+                    aria-label="Photo 2"
+                ></button>
+
+                <button
+                    data-slide="2"
+                    type="button"
+                    aria-label="Photo 3"
+                ></button>
+
+                <button
+                    data-slide="3"
+                    type="button"
+                    aria-label="Photo 4"
+                ></button>
+
+            </div>
+
+        </div>
+
+        <p class="rec-carousel-note">
+            Discover the traditional treasures of Toledo.
+        </p>
+
+    </section>
+
+
+    <!-- 03 WHAT NOT TO MISS IN TOLEDO -->
+    <section class="rec-section" id="toledo">
+
+        <div class="rec-section-heading">
+            <span>03</span>
+
+            <div>
+                <p class="rec-eyebrow">DISCOVER THE CITY</p>
+                <h2>What not to miss in Toledo</h2>
+            </div>
+        </div>
+
+        <p class="rec-section-description">
+            Select a place and discover some of Toledo's most
+            remarkable attractions.
+        </p>
+
+
+        <!-- INTERACTIVE BUTTONS -->
+        <div class="rec-place-buttons">
+
+            <button
+                class="rec-place-button active"
+                data-place="0"
+                type="button"
+                aria-pressed="true"
+            >
+                01 — Toledo Cathedral
+            </button>
+
+            <button
+                class="rec-place-button"
+                data-place="1"
+                type="button"
+                aria-pressed="false"
+            >
+                02 — The Alcázar
+            </button>
+
+            <button
+                class="rec-place-button"
+                data-place="2"
+                type="button"
+                aria-pressed="false"
+            >
+                03 — The Old Town
+            </button>
+
+            <button
+                class="rec-place-button"
+                data-place="3"
+                type="button"
+                aria-pressed="false"
+            >
+                04 — Panoramic viewpoints
+            </button>
+
+        </div>
+
+
+        <!-- PLACE PHOTO AND DESCRIPTION -->
+        <div class="rec-place-display">
+
+            <img
+                id="toledo-place-photo"
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Catedral_de_Toledo_-_Espa%C3%B1a.jpg?width=1200"
+                alt="Toledo Cathedral"
+            >
+
+            <div class="rec-place-description">
+
+                <span id="toledo-place-number">01 / 04</span>
+
+                <h3 id="toledo-place-title">Toledo Cathedral</h3>
+
+                <p id="toledo-place-text">
+                    Discover one of Spain's most impressive
+                    Gothic monuments.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 04 PUY DU FOU HIGHLIGHTS -->
+    <section class="rec-section rec-section-alt" id="puy-du-fou">
+
+        <div class="rec-section-heading">
+            <span>04</span>
+
+            <div>
+                <p class="rec-eyebrow">A WORLD OF ENTERTAINMENT</p>
+                <h2>Puy du Fou highlights</h2>
+            </div>
+        </div>
+
+        <p class="rec-section-description">
+            Experience history through spectacular performances,
+            impressive scenery and unforgettable stories.
+        </p>
+
+
+        <div class="rec-puy-grid">
+
+            <article class="rec-puy-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/El_Sue%C3%B1o_de_Toledo%2C_Puy_du_Fou%2C_2024.jpg?width=1200"
+                    alt="El Sueño de Toledo show"
+                    loading="lazy"
+                >
+
+                <div class="rec-puy-content">
+                    <span>01 — NIGHT SHOW</span>
+
+                    <h3>El Sueño de Toledo</h3>
+
+                    <p>
+                        A spectacular journey through important
+                        moments in Spanish history.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article class="rec-puy-card">
+
+                <img
+                    src="https://themeparks-eu.com/images/Puy%20du%20Fou%20Espana%20Daytime%20Shows/Puy%20du%20Fou%20Espana%20103.jpg"
+                    alt="A daytime performance at Puy du Fou España"
+                    loading="lazy"
+                >
+
+                <div class="rec-puy-content">
+                    <span>02 — LIVE PERFORMANCE</span>
+
+                    <h3>Cetrería de Reyes</h3>
+
+                    <p>
+                        An impressive show featuring birds of prey
+                        and historical characters.
+                    </p>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="rec-show-list">
+
+            <article>
+                <span>03</span>
+
+                <div>
+                    <h3>El Último Cantar</h3>
+                    <p>
+                        A dramatic story inspired by the legendary El Cid.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span>04</span>
+
+                <div>
+                    <h3>A Pluma y Espada</h3>
+                    <p>
+                        An entertaining adventure full of action and surprises.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <p class="rec-note">
+            Check the official park programme before your visit.
+            Show availability and schedules may change depending on the date.
+        </p>
+
+    </section>
+
+
+    <!-- 05 INTERACTIVE CHECKLIST -->
+    <section class="rec-section rec-checklist-section" id="essentials">
+
+        <div class="rec-section-heading">
+            <span>05</span>
+
+            <div>
+                <p class="rec-eyebrow">YOUR TRAVEL CHECKLIST</p>
+                <h2>Don't forget your essentials</h2>
+            </div>
+        </div>
+
+        <p class="rec-section-description">
+            Tick each item as you prepare for your journey.
+            Your progress will be saved in this browser.
+        </p>
+
+
+        <div class="rec-checklist">
+
+            <div class="rec-progress-header">
+                <span>YOUR PREPARATION</span>
+                <strong id="progress-text">0 / 8</strong>
+            </div>
+
+            <div
+                class="rec-progress-track"
+                role="progressbar"
+                aria-label="Checklist progress"
+                aria-valuemin="0"
+                aria-valuemax="8"
+                aria-valuenow="0"
+                id="progress-track"
+            >
+                <div class="rec-progress-bar" id="progress-bar"></div>
+            </div>
+
+
+            <div class="rec-checklist-items">
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="shoes">
+                    <span class="custom-check"></span>
+                    <span>Comfortable shoes</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="documents">
+                    <span class="custom-check"></span>
+                    <span>ID card or passport</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="sunglasses">
+                    <span class="custom-check"></span>
+                    <span>Sunglasses</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="sunscreen">
+                    <span class="custom-check"></span>
+                    <span>Sunscreen</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="water">
+                    <span class="custom-check"></span>
+                    <span>Water bottle</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="phone">
+                    <span class="custom-check"></span>
+                    <span>Mobile phone</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="tickets">
+                    <span class="custom-check"></span>
+                    <span>Tickets and reservations</span>
+                </label>
+
+                <label class="rec-check-item">
+                    <input type="checkbox" value="wallet">
+                    <span class="custom-check"></span>
+                    <span>Wallet and bank cards</span>
+                </label>
+
+            </div>
+
+
+            <p
+                class="rec-complete-message"
+                id="complete-message"
+                aria-live="polite"
+            >
+                Excellent! You are ready for your trip.
+            </p>
+
+
+            <button
+                class="rec-reset-button"
+                id="reset-checklist"
+                type="button"
+            >
+                RESET CHECKLIST
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section class="rec-final-message">
+
+        <div class="rec-gold-line"></div>
+
+        <p class="rec-eyebrow">THE PERFECT TRIP</p>
+
+        <h2>Enjoy every moment of your journey.</h2>
+
+        <p>
+            Discover, experience and create unforgettable memories.
+        </p>
+
+        <a href="../index.html" class="rec-button">
+            BACK TO THE MAIN PAGE
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="rec-footer">
+
+        <div class="rec-footer-decoration"></div>
+
+        <p class="rec-footer-title">THE PERFECT TRIP</p>
+
+        <p class="rec-footer-destination">
+            TOLEDO &amp; PUY DU FOU ESPAÑA
+        </p>
+
+        <p class="rec-footer-motto">
+            CULTURE · HISTORY · ENTERTAINMENT
+        </p>
+
+        <a href="#top" class="rec-back-to-top">
+            BACK TO TOP ↑
+        </a>
+
+        <p class="rec-photo-credits">
+            Photography:
+            <a href="https://commons.wikimedia.org/wiki/File:Toledo_cyl-panorama-mirador.jpg"
+               target="_blank" rel="noopener">Toledo panorama</a> ·
+            <a href="https://commons.wikimedia.org/wiki/File:Damasquinado.jpg"
+               target="_blank" rel="noopener">Damascene craft</a> ·
+            <a href="https://commons.wikimedia.org/wiki/File:Mazap%C3%A1n-_Toledo.jpg"
+               target="_blank" rel="noopener">Toledo marzipan</a> ·
+            <a href="https://commons.wikimedia.org/wiki/Category:Pottery_in_the_province_of_Toledo"
+               target="_blank" rel="noopener">Toledo ceramics</a> ·
+            <a href="https://commons.wikimedia.org/wiki/Category:Puy_du_Fou_Espa%C3%B1a"
+               target="_blank" rel="noopener">Puy du Fou</a>
+        </p>
+
+    </footer>
+
+</body>
+</html>
