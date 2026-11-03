@@ -1,0 +1,757 @@
+
+/* =========================================
+   THE PERFECT TRIP — BUDGET PAGE
+========================================= */
+
+:root {
+    --burgundy: #35121d;
+    --burgundy-light: #512330;
+    --gold: #c6a15b;
+    --cream: #f8f5ef;
+    --sage: #a3b59b;
+    --dark: #21191a;
+    --muted: #77716d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.budget-page {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.budget-page a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.budget-page button,
+.budget-page input {
+    font: inherit;
+}
+
+/* HEADER */
+
+.budget-header {
+    min-height: 82px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--burgundy);
+    color: var(--cream);
+}
+
+.brand {
+    color: var(--gold) !important;
+    font-size: 19px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.budget-header nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.budget-header nav a,
+.back-link {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.budget-header nav a:hover,
+.back-link:hover {
+    color: var(--gold);
+}
+
+.back-link {
+    color: var(--gold) !important;
+    white-space: nowrap;
+}
+
+/* HERO */
+
+.budget-hero {
+    min-height: 680px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+    color: white;
+
+    background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(35, 10, 19, 0.88),
+        rgba(35, 10, 19, 0.55),
+        rgba(35, 10, 19, 0.12)
+    );
+}
+
+.budget-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.budget-hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.05;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+
+.budget-hero-content > p:not(.eyebrow) {
+    max-width: 520px;
+    font-size: 20px;
+    color: #eee6df;
+    margin-bottom: 35px;
+}
+
+.gold-button {
+    display: inline-block;
+    padding: 15px 27px;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.gold-button:hover {
+    background: var(--gold);
+    color: var(--burgundy) !important;
+}
+
+.hero-bottom {
+    position: absolute;
+    z-index: 1;
+    bottom: 28px;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* INTRODUCTION */
+
+.budget-intro {
+    padding: 110px 12%;
+    text-align: center;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--burgundy);
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.intro-description {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 19px;
+}
+
+.budget-highlight {
+    max-width: 1000px;
+    margin: 65px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #d9cfc0;
+    border-bottom: 1px solid #d9cfc0;
+}
+
+.budget-highlight div {
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.budget-highlight div + div {
+    border-left: 1px solid #d9cfc0;
+}
+
+.budget-highlight span,
+.budget-highlight strong {
+    font-family: Arial, sans-serif;
+}
+
+.budget-highlight span {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.budget-highlight strong {
+    color: var(--burgundy);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* BREAKDOWN */
+
+.budget-breakdown {
+    padding: 100px 8%;
+    background: #f0ebe2;
+}
+
+.budget-breakdown .section-heading > p:last-child {
+    color: var(--muted);
+    margin-top: 15px;
+}
+
+.expense-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: 60px auto 0;
+}
+
+.expense-card {
+    background: var(--cream);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.expense-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(53, 18, 29, 0.12);
+}
+
+.expense-image {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+}
+
+.guide-image {
+    background-image: url("https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1000&q=85");
+}
+
+.lunch-image {
+    background-image: url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85");
+}
+
+.hotel-image {
+    background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85");
+}
+
+.transport-image {
+    background-image: url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=85");
+}
+
+.park-image {
+    background-image: url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=85");
+}
+
+.cathedral-image {
+    background-image: url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=85");
+}
+
+.dinner-image {
+    background-image: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85");
+}
+
+.friday-image {
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85");
+}
+
+.expense-content {
+    padding: 28px;
+}
+
+.expense-number {
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.expense-content h3 {
+    color: var(--burgundy);
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.25;
+    margin: 14px 0;
+}
+
+.expense-content p {
+    min-height: 115px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.expense-price {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #ded6ca;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.expense-price span {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+.expense-price strong {
+    color: var(--burgundy);
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/* TOTAL */
+
+.total-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 570px;
+    background: var(--burgundy);
+    color: var(--cream);
+}
+
+.total-image {
+    background-image: url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=85");
+    background-size: cover;
+    background-position: center;
+    min-height: 450px;
+}
+
+.total-content {
+    padding: 85px 12%;
+    align-self: center;
+}
+
+.total-content h2 {
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.15;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.total-content > p:not(.section-label) {
+    color: #e3d9d3;
+    font-size: 17px;
+}
+
+.total-price,
+.group-price {
+    margin-top: 25px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.total-price span,
+.group-price span {
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.total-price strong {
+    color: var(--gold);
+    font-size: 55px;
+    font-weight: normal;
+}
+
+.group-price {
+    margin-top: 0;
+    padding-top: 15px;
+    border-top: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.group-price strong {
+    color: var(--cream);
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.total-note {
+    margin-top: 18px;
+    font-size: 13px !important;
+    color: #d0c1ba !important;
+}
+
+/* INCLUDED / NOT INCLUDED */
+
+.included-section {
+    padding: 110px 12%;
+}
+
+.included-grid {
+    max-width: 1050px;
+    margin: 55px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.included-column {
+    padding: 35px;
+    background: #eee9df;
+}
+
+.included-column h3 {
+    color: var(--burgundy);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.included-column h3 span {
+    color: #6c8a69;
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.included-column ul {
+    list-style: none;
+}
+
+.included-column li {
+    position: relative;
+    padding: 12px 0 12px 25px;
+    border-bottom: 1px solid #d8d0c4;
+    color: #625c57;
+    font-size: 16px;
+}
+
+.included-column li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6c8a69;
+}
+
+.not-included {
+    background: #f5eee9;
+}
+
+.not-included h3 span {
+    color: #a66d5f;
+}
+
+.not-included li::before {
+    content: "–";
+    color: #a66d5f;
+}
+
+/* CALCULATOR */
+
+.calculator-section {
+    padding: 110px 12%;
+    background: #eee9df;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.calculator-intro h2 {
+    color: var(--burgundy);
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.1;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.calculator-intro > p:last-child {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 430px;
+}
+
+.calculator-card {
+    padding: 40px;
+    background: var(--cream);
+    box-shadow: 0 15px 40px rgba(53,18,29,0.08);
+}
+
+.calculator-card label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.traveller-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #d9cfc0;
+}
+
+.traveller-control button {
+    width: 55px;
+    height: 55px;
+    border: none;
+    background: var(--burgundy);
+    color: var(--gold);
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.traveller-control button:hover {
+    background: var(--burgundy-light);
+}
+
+.traveller-control input {
+    width: 90px;
+    border: none;
+    background: transparent;
+    text-align: center;
+    color: var(--burgundy);
+    font-size: 25px;
+    outline: none;
+}
+
+.calculator-divider {
+    height: 1px;
+    background: #ddd4c8;
+    margin: 30px 0;
+}
+
+.calculator-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.calculator-row strong {
+    color: var(--burgundy);
+}
+
+.calculator-total {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd4c8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calculator-total span {
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.calculator-total strong {
+    color: var(--burgundy);
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.calculator-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* CLOSING */
+
+.budget-closing {
+    padding: 110px 20px;
+    text-align: center;
+    background: var(--burgundy);
+    color: var(--cream);
+}
+
+.budget-closing h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.1;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.budget-closing > p:not(.section-label) {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: #e1d7d1;
+    font-size: 18px;
+}
+
+/* FOOTER */
+
+.budget-footer {
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #241018;
+    color: var(--cream);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.budget-footer a:first-child {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* REVEAL ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+    .budget-header {
+        flex-wrap: wrap;
+        padding: 20px 5%;
+    }
+
+    .budget-header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .expense-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .calculator-section {
+        gap: 35px;
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+@media (max-width: 650px) {
+    .budget-hero {
+        min-height: 600px;
+        padding: 80px 7%;
+    }
+
+    .hero-bottom {
+        font-size: 8px;
+    }
+
+    .budget-intro,
+    .budget-breakdown,
+    .included-section {
+        padding: 75px 7%;
+    }
+
+    .budget-highlight {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-highlight div + div {
+        border-left: none;
+        border-top: 1px solid #d9cfc0;
+    }
+
+    .expense-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expense-content p {
+        min-height: auto;
+    }
+
+    .total-section {
+        grid-template-columns: 1fr;
+    }
+
+    .total-image {
+        min-height: 300px;
+    }
+
+    .total-content {
+        padding: 65px 8%;
+    }
+
+    .included-grid,
+    .calculator-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .calculator-card {
+        padding: 25px;
+    }
+
+    .budget-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
