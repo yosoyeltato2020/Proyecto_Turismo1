@@ -114,6 +114,8 @@
 .rec-hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    min-width: 0;
     max-width: 850px;
 }
 
@@ -917,7 +919,9 @@
     }
 
     .rec-hero h1 {
-        letter-spacing: 2px;
+        font-size: clamp(20px, 7vw, 34px);
+        line-height: 1.15;
+        letter-spacing: 1px;
     }
 
     .rec-intro {
