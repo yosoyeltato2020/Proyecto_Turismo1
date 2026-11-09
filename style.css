@@ -524,13 +524,7 @@ body {
 
     .trip-card:hover,
     .trip-card:focus-visible {
-        transform: 
-            translateX(var(--x))
-            translateY(-35px)
-            translateZ(150px)
-            rotateY(calc(var(--angle) + var(--ry, 0deg)))
-            rotateX(var(--rx, 0deg))
-            scale(1.07);
+        transform: translateY(-12px) scale(1.03);
     }
 
     .scroll-hint {
