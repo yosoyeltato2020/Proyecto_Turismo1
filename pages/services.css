@@ -1,166 +1,182 @@
 
-/* =====================================
-   SERVICES PAGE
-   THE PERFECT TRIP
-===================================== */
+/* =========================================
+   THE PERFECT TRIP — SERVICES
+   ========================================= */
 
+:root {
+    --burgundy: #35121d;
+    --burgundy-light: #512330;
+    --gold: #c6a15b;
+    --gold-light: #dfc58d;
+    --cream: #f8f5ef;
+    --sage: #a3b59b;
+    --text-dark: #2c2522;
+    --text-light: #f8f5ef;
+}
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
 
 /* HEADER */
-
 .services-header {
-    min-height: 75px;
-    padding: 0 7%;
+    width: 100%;
+    min-height: 85px;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--burgundy);
+    color: var(--cream);
+}
+
+.brand {
+    color: var(--gold-light);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: #35121d;
-    color: #f8f5ef;
+    gap: 35px;
 }
 
-.services-header .brand {
-    color: #c6a15b;
+.nav-links a {
+    color: var(--cream);
     text-decoration: none;
     font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.services-header nav {
-    display: flex;
-    gap: 30px;
-}
-
-.services-header nav a {
-    color: #f8f5ef;
-    text-decoration: none;
-    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.services-header nav a:hover,
-.services-header nav a.active {
-    color: #c6a15b;
+.nav-links a:hover {
+    color: var(--gold-light);
 }
-
 
 /* HERO */
-
 .services-hero {
-    min-height: 390px;
-    padding: 85px 20px 70px;
-
-    background:
-        linear-gradient(
-            rgba(53, 18, 29, 0.88),
-            rgba(53, 18, 29, 0.92)
-        ),
-        url("https://commons.wikimedia.org/wiki/Special:FilePath/Panoramic_view_of_Toledo.jpg")
-        center / cover;
-
-    color: #f8f5ef;
-    text-align: center;
-
+    min-height: 570px;
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--cream);
+    background:
+        linear-gradient(
+            rgba(53, 18, 29, 0.68),
+            rgba(53, 18, 29, 0.78)
+        ),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Panoramic_view_of_Toledo.jpg")
+        center / cover no-repeat;
 }
 
-.eyebrow {
-    color: #c6a15b;
+.hero-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow {
+    display: block;
+    color: var(--gold-light);
+    font-size: 16px;
     letter-spacing: 4px;
-    font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .services-hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(46px, 6vw, 72px);
+    font-size: clamp(48px, 7vw, 82px);
     font-weight: normal;
-    margin: 0 0 20px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
 }
 
-.services-hero > p {
-    max-width: 700px;
-    line-height: 1.9;
-    color: #e5ddd5;
-    font-size: 19px;
-}
-
-.hero-line {
-    width: 65px;
-    height: 2px;
-    background: #c6a15b;
-    margin: 28px 0;
+.hero-content p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 21px;
+    line-height: 1.7;
 }
 
 .trip-details {
-    color: #c6a15b;
-    font-size: 14px;
+    margin-top: 35px;
+    color: var(--gold-light);
+    font-size: 16px;
     letter-spacing: 2px;
 }
 
-.trip-details span {
-    padding: 0 10px;
-}
-
-
-/* INCLUDED SECTION */
-
+/* INCLUDED SERVICES */
 .included-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 95px 35px 100px;
+    padding: 100px 8%;
+    background: var(--cream);
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: 65px;
 }
 
 .section-number {
-    color: #a48750;
-    font-size: 14px;
+    display: block;
+    color: var(--gold);
+    font-size: 16px;
     letter-spacing: 3px;
+    margin-bottom: 15px;
 }
 
-.section-heading h2,
-.not-included-title h2 {
-    color: #35121d;
-    font-family: Georgia, serif;
-    font-size: clamp(34px, 4vw, 44px);
+.section-heading h2 {
+    color: var(--burgundy);
+    font-size: clamp(38px, 4vw, 48px);
     font-weight: normal;
-    margin: 15px 0;
+    margin-bottom: 18px;
 }
 
-.section-heading p,
-.not-included-title p {
-    color: #77716c;
-    font-size: 18px;
-    line-height: 1.9;
+.section-description {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #756b64;
+    font-size: 20px;
+    line-height: 1.7;
 }
 
-
-/* SERVICE CARDS */
-
+/* SERVICES GRID */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 35px;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
+/* SERVICE CARD */
 .service-card {
     background: #fff;
-    border: 1px solid #e9e2d8;
     overflow: hidden;
-
-    opacity: 0;
-    transform: translateY(25px);
-
+    box-shadow: 0 12px 35px rgba(53, 18, 29, 0.10);
     transition:
-        opacity 0.6s ease,
-        transform 0.6s ease,
-        box-shadow 0.35s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(35px);
 }
 
 .service-card.visible {
@@ -169,221 +185,156 @@
 }
 
 .service-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 18px 35px rgba(53, 18, 29, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(53, 18, 29, 0.17);
 }
 
 .service-image {
     height: 300px;
     position: relative;
     overflow: hidden;
-    background: #e8e0d5;
 }
 
 .service-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
     transition: transform 0.6s ease;
 }
 
 .service-card:hover .service-image img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .service-number {
     position: absolute;
+    top: 20px;
     left: 20px;
-    bottom: 18px;
-    background: #35121d;
-    color: #c6a15b;
-    padding: 11px 16px;
-    font-size: 15px;
-    letter-spacing: 1px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gold);
+    color: var(--burgundy);
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 50%;
 }
 
 .service-content {
-    padding: 30px 32px 35px;
+    padding: 32px 35px 38px;
 }
 
 .service-category {
-    color: #a48750;
-    font-size: 14px;
+    display: block;
+    color: var(--gold);
+    font-size: 16px;
     letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-.service-content h3 {
-    color: #35121d;
-    font-family: Georgia, serif;
-    font-size: 29px;
+.service-card h3 {
+    color: var(--burgundy);
+    font-size: 32px;
     font-weight: normal;
-    margin: 15px 0;
+    margin-bottom: 15px;
 }
 
-.service-content p {
-    color: #625c57;
-    font-size: 18px;
-    line-height: 1.9;
-    margin: 0;
+.service-card p {
+    color: #625952;
+    font-size: 20px;
+    line-height: 1.7;
 }
 
+/* SEVENTH CARD — GUIDED TOUR */
+.services-grid .service-card:nth-child(7) {
+    grid-column: 1 / -1;
+    width: calc(50% - 17.5px);
+    justify-self: center;
+}
 
 /* NOT INCLUDED */
-
 .not-included-section {
-    background: #f0ece5;
-    padding: 75px 8%;
-
+    padding: 100px 8%;
+    background: var(--burgundy);
+    color: var(--cream);
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
     align-items: center;
 }
 
 .not-included-title h2 {
-    margin-bottom: 12px;
+    color: var(--gold-light);
+    font-size: 46px;
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
-.not-included-list {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+.not-included-title p {
+    color: #e5dcd5;
+    font-size: 23px;
+    line-height: 1.7;
 }
 
 .not-included-list div {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    color: #514b47;
-    line-height: 1.8;
-    font-size: 17px;
+    color: var(--cream);
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 22px;
 }
 
 .not-included-list span {
-    color: #a48750;
-    font-size: 14px;
-    letter-spacing: 1px;
-    min-width: 22px;
+    color: var(--gold-light);
+    font-size: 22px;
+    margin-right: 18px;
+    flex-shrink: 0;
 }
 
-
-/* CLOSING */
-
+/* CLOSING MESSAGE */
 .closing-message {
-    background: #35121d;
-    color: #f8f5ef;
+    padding: 100px 20px;
     text-align: center;
-    padding: 80px 20px;
+    background: var(--cream);
 }
 
-.closing-message > span {
-    color: #c6a15b;
-    font-size: 14px;
-    letter-spacing: 4px;
+.closing-label {
+    display: block;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 .closing-message h2 {
-    font-family: Georgia, serif;
+    color: var(--burgundy);
+    font-size: clamp(40px, 4vw, 54px);
     font-weight: normal;
-    font-size: clamp(36px, 5vw, 50px);
-    margin: 20px 0;
+    margin-bottom: 22px;
 }
 
 .closing-message p {
-    color: #e5ddd5;
-    font-size: 19px;
-    line-height: 1.9;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #756b64;
+    font-size: 21px;
+    line-height: 1.7;
 }
-
 
 /* FOOTER */
-
 .services-footer {
-    background: #260d15;
-    color: #d8cec4;
-    padding: 28px 7%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    font-size: 14px;
-    letter-spacing: 1px;
+    padding: 30px 20px;
+    text-align: center;
+    background: var(--burgundy);
+    color: var(--cream);
+    font-size: 16px;
 }
 
-.services-footer a {
-    color: #c6a15b;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 750px) {
-
-    .services-header {
-        padding: 20px;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .services-header nav {
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .included-section {
-        padding: 65px 20px;
-    }
-
-    .service-image {
-        height: 250px;
-    }
-
-    .service-content {
-        padding: 25px;
-    }
-
-    .service-content h3 {
-        font-size: 27px;
-    }
-
-    .service-content p {
-        font-size: 17px;
-    }
-
-    .not-included-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 60px 25px;
-    }
-
-    .services-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
-/* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .service-card,
-    .service-image img {
-        transition: none;
-    }
-}
 /* TYPOGRAPHY — LARGER TEXT */
-
 .nav-links a {
     font-size: 18px;
 }
@@ -429,43 +380,23 @@
     line-height: 1.7;
 }
 
-.not-included li {
-    font-size: 19px;
-}
-
 .closing-label {
     font-size: 16px;
 }
 
-.closing-section h2 {
+.closing-message h2 {
     font-size: clamp(40px, 4vw, 54px);
 }
 
-.closing-section p {
+.closing-message p {
     font-size: 21px;
 }
 
-footer {
+.services-footer {
     font-size: 16px;
 }
-/* NOT INCLUDED — EXTRA LARGE TEXT */
 
-.not-included li {
-    font-size: 25px;
-    line-height: 1.9;
-    margin-bottom: 16px;
-}
-
-.not-included h2 {
-    font-size: 46px;
-}
-
-.not-included p {
-    font-size: 23px;
-    line-height: 1.8;
-}
 /* NOT INCLUDED — BIGGER TYPOGRAPHY */
-
 .not-included-section .not-included-title h2 {
     font-size: 50px !important;
 }
@@ -484,4 +415,111 @@ footer {
 .not-included-section .not-included-list span {
     font-size: 22px !important;
     margin-right: 18px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 750px) {
+    .services-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services-hero {
+        min-height: 450px;
+    }
+
+    .services-hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .included-section {
+        padding: 70px 6%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .services-grid .service-card:nth-child(7) {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .service-image {
+        height: 250px;
+    }
+
+    .service-content {
+        padding: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 28px;
+    }
+
+    .service-card p {
+        font-size: 18px;
+    }
+
+    .not-included-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 70px 7%;
+    }
+
+    .not-included-section .not-included-title h2 {
+        font-size: 38px !important;
+    }
+
+    .not-included-section .not-included-title p {
+        font-size: 20px !important;
+    }
+
+    .not-included-section .not-included-list div {
+        font-size: 19px !important;
+    }
+
+    .closing-message {
+        padding: 70px 7%;
+    }
+
+    .closing-message h2 {
+        font-size: 38px;
+    }
+
+    .closing-message p {
+        font-size: 18px;
+    }
+}
+
+/* ACCESSIBILITY — REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .service-card {
+        opacity: 1;
+        transform: none;
+    }
 }
