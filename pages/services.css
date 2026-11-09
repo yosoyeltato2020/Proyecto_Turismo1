@@ -94,6 +94,12 @@ body {
     z-index: 1;
 }
 
+.services-hero .hero-content {
+    width: min(100%, 900px);
+    margin: 0;
+    padding: 0;
+}
+
 .hero-eyebrow {
     display: block;
     color: var(--gold-light);
@@ -117,10 +123,18 @@ body {
 }
 
 .trip-details {
+    display: block;
     margin-top: 35px;
     color: var(--gold-light);
     font-size: 16px;
     letter-spacing: 2px;
+}
+
+.hero-line {
+    width: 80px;
+    height: 1px;
+    margin: 30px auto 0;
+    background: var(--gold);
 }
 
 /* INCLUDED SERVICES */
@@ -334,6 +348,27 @@ body {
     font-size: 16px;
 }
 
+.services-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-top: 12px;
+}
+
+.services-footer-links a {
+    color: var(--gold-light);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.services-footer-links a:hover,
+.services-footer-links a:focus-visible {
+    color: var(--cream);
+    text-decoration: underline;
+}
+
 /* TYPOGRAPHY — LARGER TEXT */
 .nav-links a {
     font-size: 18px;
@@ -433,14 +468,28 @@ body {
 
     .services-hero {
         min-height: 450px;
+        padding: 70px 20px;
     }
 
     .services-hero h1 {
-        font-size: 45px;
+        font-size: clamp(32px, 9vw, 42px);
+        line-height: 1.15;
+        letter-spacing: 1px;
     }
 
-    .hero-content p {
+    .services-hero .hero-content p {
         font-size: 18px;
+    }
+
+    .hero-eyebrow {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .trip-details {
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 1px;
     }
 
     .included-section {
